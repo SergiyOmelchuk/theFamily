@@ -1,0 +1,62 @@
+.howItWork {
+    padding: 0 60px;
+    margin-bottom: 100px;
+}
+.title {
+    padding-bottom: 60px;
+}
+.itemsBlock {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.item {
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.itemNumber {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-family: 'Open Sans', sans-serif;;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #9f7b51;
+    border: 1px solid #9f7b51;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.itemTitle {
+    font-family: 'Open Sans', sans-serif;;
+    font-size: 15px;
+    font-weight: 700;
+    color: #f8f4f1;
+    letter-spacing: 1.87px;
+    text-transform: uppercase;
+    padding: 13px 0px 17px 0px;
+}
+.itemText {
+    color: #f1e1ca;
+    font-family: 'Open Sans', sans-serif;;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    /*background-color: #2e2e2e;*/
+    /*padding: 62px 20px 23px 20px;*/
+    /*border: 1px solid #2e2e2e;*/
+    /*border-radius: 5px;*/
+    /*z-index: -1;*/
+}
+.itemHoverText {
+    background-color: #2e2e2e;
+    border: 1px solid #2e2e2e;
+    border-radius: 5px;
+    background-position: -50% -50%;
+}

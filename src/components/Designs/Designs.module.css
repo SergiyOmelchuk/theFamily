@@ -1,0 +1,51 @@
+.designs {
+    padding: 0 70px;
+    margin-bottom: 135px;
+}
+.title {
+    padding-bottom: 30px;
+}
+.designsBlock {
+    display: flex;
+    align-items: stretch;
+    align-self: center;
+    justify-content: space-between;
+}
+.item_imgBlock {
+    padding: 8px;
+    border: 4px solid #8f704c;
+    height: 360px;
+    width: 490px;
+    cursor: pointer;
+}
+.item_imgBlock img {
+    width: 100%;
+    height: 100%;
+}
+
+.item_title {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: .87px;
+    color: #e5c490;
+    text-transform: uppercase;
+    padding: 20px 0 30px;
+}
+
+.buyButton,
+.demoButton {
+    width: 150px;
+    font-size: 13px;
+}
+.buyButton {
+    margin-right: 20px;
+}
+
+.itemSecondary {
+    padding: 6px;
+    border: 3px solid #8f704c;
+    height: calc(360px * 0.735);
+    width: calc(490px * 0.735);
+    cursor: pointer;
+    margin-top: 50px;
+}
