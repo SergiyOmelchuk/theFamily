@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./Header.module.css";
 import logo from "../../img/logo.png";
+import {NavLink} from "react-router-dom";
 
 
 function Header() {
@@ -16,6 +17,7 @@ function Header() {
                     <a href="#">Price List</a>
                     <a href="#">Reviews</a>
                     <a href="#">Contacts</a>
+                    <NavLink to='/edit'>Edit</NavLink>
                 </nav>
                 <div className={s.header_login}>
                     <a className={s.header_language} href="#"></a>

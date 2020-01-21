@@ -53,3 +53,11 @@
     background-color: #936431;
     border: 3px solid #936431;
 }
+
+textarea {
+    width: 100%;
+    height: 100%;
+}
+.editMode {
+    border: 2px solid red;
+}

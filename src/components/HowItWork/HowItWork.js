@@ -19,20 +19,23 @@ function HowItWork() {
                 </div>
                 <div className={s.item}>
                     <div className={s.itemNumber}>2</div>
+                    {/*<div className={s.itemTitle}>CHOOSE A DESIGN</div>*/}
                     <div className={s.itemHoverText}>
                         <div className={s.itemTitle}>CHOOSE A DESIGN</div>
                         <div className={s.itemText}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                             eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </div>
                     </div>
-
                 </div>
                 <div className={s.item}>
                     <div className={s.itemNumber}>3</div>
                     <div className={s.itemTitle}>PICK A PLAN</div>
-                    <div className={s.itemText}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </div>
+                    {/*<div className={s.itemHoverText}>*/}
+                    {/*    <div className={s.itemTitle}>CHOOSE A DESIGN</div>*/}
+                    {/*    <div className={s.itemText}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do*/}
+                    {/*        eiusmod tempor incididunt ut labore et dolore magna aliqua.*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
                 <div className={s.item}>
                     <div className={s.itemNumber}>4</div>

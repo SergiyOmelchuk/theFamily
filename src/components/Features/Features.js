@@ -1,15 +1,14 @@
 import React from "react";
 import s from "./Features.module.css";
 import c from "../../common/commonStyles.module.css";
-import img1 from "./img/photo_features_1.jpg";
-import img2 from "./img/photo_features_2.jpg";
+import TitleFeatures from "./TitleFeatures/TitleFeatures";
 
 
-function Features() {
+function Features(props) {
     return (
         <div className={s.features}>
             <div className={`${s.titleSection} ${c.titleCommon}`}>
-                What will you get
+                <TitleFeatures text={props.features.title} updateText={props.updateText}/>
             </div>
             <div className={s.block1}>
                 <div className={`${s.titleBlock} ${c.titleCommon}`}>

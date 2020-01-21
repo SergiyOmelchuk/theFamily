@@ -8,13 +8,12 @@
 .itemsBlock {
     display: flex;
     text-align: center;
-    align-items: center;
 }
 .item {
-    max-width: 300px;
+    width: 300px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
 }
 
@@ -32,6 +31,7 @@
     border: 1px solid #9f7b51;
     border-radius: 50%;
     cursor: pointer;
+    margin-bottom: -20px;
 }
 .itemTitle {
     font-family: 'Open Sans', sans-serif;;
@@ -41,6 +41,7 @@
     letter-spacing: 1.87px;
     text-transform: uppercase;
     padding: 13px 0px 17px 0px;
+    margin-top: 20px;
 }
 .itemText {
     color: #f1e1ca;
@@ -48,15 +49,11 @@
     font-size: 14px;
     font-weight: 400;
     text-align: left;
-    /*background-color: #2e2e2e;*/
-    /*padding: 62px 20px 23px 20px;*/
-    /*border: 1px solid #2e2e2e;*/
-    /*border-radius: 5px;*/
-    /*z-index: -1;*/
 }
+
 .itemHoverText {
     background-color: #2e2e2e;
     border: 1px solid #2e2e2e;
     border-radius: 5px;
-    background-position: -50% -50%;
+    z-index: -10;
 }
