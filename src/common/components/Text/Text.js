@@ -38,23 +38,30 @@ class Text extends Component {
             text: e.currentTarget.value
         })
     }
+
     render() {
-        const { editMode, text } = this.state;
-        const { className } = this.props;
+        const {editMode, text} = this.state;
+        const {className, landingEditMode} = this.props;
 
         const classes = classNames(
             className
         );
         return (
-            <div className={classes}>
-                {!editMode &&
-                <div  onDoubleClick={this.activateEditMode}>
+            <div>
+                {!landingEditMode &&
+                <div className={classes}>
                     {text}
                 </div>
                 }
 
-                {editMode &&
-                <div>
+                {landingEditMode && !editMode &&
+                <div className={classes} onDoubleClick={this.activateEditMode}>
+                    {text}
+                </div>
+                }
+
+                {landingEditMode && editMode &&
+                <div className={classes}>
                             <textarea onChange={this.onStatusChange} autoFocus={true}
                                       onBlur={this.deActivateEditMode}
                                       value={text}> </textarea>

@@ -14,7 +14,6 @@ import store from "./components/redux/redux-store";
 import {Provider} from "react-redux";
 import {BrowserRouter, NavLink, Route, Switch} from "react-router-dom";
 import EditMainBlockContainer from "./components/Edit/EditMainBlock/EditMainBlockContainer";
-import {setEditMode} from "./components/redux/Landing-reducer";
 import FeaturesContainer from "./components/Features/FeaturesContainer";
 
 function App() {
@@ -26,7 +25,6 @@ function App() {
             <Switch>
                 <Route path="/edit" render={() =>
                     <div>
-                        <SetEditMode/>
                         <Header/>
                         <EditMainBlockContainer/>
                     </div>}/>
@@ -61,9 +59,3 @@ const AppContainer = () => {
 export default AppContainer;
 
 
-function SetEditMode() {
-    setEditMode();
-    return (
-        <div className="editModeText">You are in Edit Mode</div>
-    )
-}

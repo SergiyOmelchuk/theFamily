@@ -49,22 +49,26 @@ class Button extends Component {
 
     render() {
         const { editMode, text } = this.state;
-        const { onClick, className, width, style } = this.props;
-        const elemStyle = width ? {width: `${width}px`} : null;
+        const { onClick, className, style, landingEditMode } = this.props;
 
         const classes = classNames(
             className
         );
         return (
-            <div className={classes} style={style}>
-                {!editMode &&
-                <div onClick={onClick}  onDoubleClick={this.activateEditMode}>
+            <div>
+                {!landingEditMode &&
+                <div  className={classes} style={style}onClick={onClick} >
+                    {text}
+                </div>
+                }
+                {landingEditMode && !editMode &&
+                <div className={classes} style={style} onDoubleClick={this.activateEditMode}>
                     {text}
                 </div>
                 }
 
-                {editMode &&
-                <div>
+                {landingEditMode && editMode &&
+                <div  className={classes} style={style}>
                             <textarea onChange={this.onStatusChange} autoFocus={true}
                                       onBlur={this.deActivateEditMode}
                                       value={text}> </textarea>

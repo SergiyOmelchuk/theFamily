@@ -56,3 +56,22 @@
     letter-spacing: normal;
 
 }
+.active {
+    color: #fff;
+    border: 2px solid black;
+    padding: 15px;
+    background-color: grey;
+}
+button {
+    padding: 10px;
+}
+
+.activeEditMode {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border: 2px solid grey;
+    padding: 15px;
+    background-color: firebrick;
+    color: #fff;
+}

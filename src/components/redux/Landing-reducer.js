@@ -9,7 +9,7 @@ let initialState = {
             mainMainButtonText: "CREATE SITE",
             mainSecondaryButtonText: "CHOOSE DESIGN"
         },
-        editMode: true,
+        landingEditMode: false,
         features: {
             title: "What will you get",
             block1: {
@@ -231,17 +231,16 @@ const landingReducer = (state = initialState, action) => {
             return {
                 ...state, mainBlock: {...state.mainBlock, mainSecondaryButtonText: action.newText}
             }
-        case SET_EDIT_MODE:
+        case "ON-LANDING-EDIT-MODE" :
             return {
-                // ...state, mainTitle: action.newText
                 ...state,
-                editMode: true
+                landingEditMode: true
             }
-        // case "UPDATE-NEW-MESSAGE":
-        //     return {
-        //         ...state,
-        //         newMessageText: action.newMessage
-        //     }
+        case "OFF-LANDING-EDIT-MODE":
+            return {
+                ...state,
+                landingEditMode: false
+            }
         default:
             return state;
     }
@@ -249,6 +248,8 @@ const landingReducer = (state = initialState, action) => {
 
 
 export let setText = (newText, blockName) => ({type: blockName, newText});
+export let onLandingEditMode = () => ({type: "ON-LANDING-EDIT-MODE"});
+export let offLandingEditMode = () => ({type: "OFF-LANDING-EDIT-MODE" });
 export let EditMode = () => ({type: "SET-EDIT-MODE",});
 
 export const updateText = (newText, blockName) => {
@@ -259,11 +260,17 @@ export const updateText = (newText, blockName) => {
 
 }
 
-export const setEditMode = () => {
+export const activateLandingEditMode = () => {
     return (dispatch) => {
-        dispatch(EditMode());
+        dispatch(onLandingEditMode());
     }
 }
+export const deactivateLandingEditMode = () => {
+    return (dispatch) => {
+        dispatch(offLandingEditMode());
+    }
+}
+
 
 export let addMessageActiveCreation = (newMessageText) => ({type: "ADD-MESSAGE", newMessageText});
 // export let updateNewMessageActiveCreation = (text) => ({type: "UPDATE-NEW-MESSAGE", newMessage: text});
