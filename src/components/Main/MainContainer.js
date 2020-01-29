@@ -1,6 +1,7 @@
 import React from "react";
 import Main from "./Main";
 import {connect} from "react-redux";
+import {updateText} from "../redux/Landing-reducer";
 
 
 let mapStateToProps = (state) => {
@@ -12,10 +13,8 @@ let mapStateToProps = (state) => {
         mainSecondaryButtonText: state.landingPage.mainBlock.mainSecondaryButtonText
     };
 };
-let mapDispatchToProps = (dispatch) => {
-    return;
-};
 
-const MainContainer = connect(mapStateToProps, mapDispatchToProps)(Main);
+
+const MainContainer = connect(mapStateToProps, {updateText})(Main);
 
 export default MainContainer;

@@ -5,7 +5,7 @@ class mainButtonText__EditMainBlock extends React.Component {
 
     state = {
         editMode: false,
-        text: this.props.mainMainButtonText,
+        text: this.props.text,
     }
     activateEditMode = (editor) => {
         this.setState({

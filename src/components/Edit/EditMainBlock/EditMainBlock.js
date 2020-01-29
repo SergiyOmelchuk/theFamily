@@ -61,7 +61,7 @@ class EditMainBlock extends React.Component {
                     </div>
                     <div className={s.buttonBlock}>
                         <button className={`${s.buttonChooseDesign} ${c.buttonCommon} ${c.buttonSecondaryCommon}`}>
-                            <MainButtonText__EditMainBlock mainMainButtonText={this.props.mainMainButtonText}
+                            <MainButtonText__EditMainBlock text={this.props.mainMainButtonText}
                                                            updateText={this.props.updateText}/>
                         </button>
                         <button id="button" className={`${s.buttonCreateSite} ${c.buttonCommon} ${c.buttonMainCommon}`}>

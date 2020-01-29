@@ -1,12 +1,14 @@
 .howItWork {
     padding: 0 60px;
     margin-bottom: 100px;
+    min-height: 350px;
 }
 .title {
     padding-bottom: 60px;
 }
 .itemsBlock {
     display: flex;
+    position: relative;
     text-align: center;
 }
 .item {
@@ -15,6 +17,7 @@
     align-items: center;
     justify-content: start;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .itemNumber {
@@ -31,9 +34,20 @@
     border: 1px solid #9f7b51;
     border-radius: 50%;
     cursor: pointer;
-    margin-bottom: -20px;
+    margin-bottom: -15px;
+}
+
+.itemsBlock::before {
+    content: "";
+    top: 20px;
+    left: 10%;
+    position: absolute;
+    width: 80%;
+    border: 2px solid #9f7b51;
+    z-index: -10;
 }
 .itemTitle {
+    display: block;
     font-family: 'Open Sans', sans-serif;;
     font-size: 15px;
     font-weight: 700;
@@ -44,16 +58,21 @@
     margin-top: 20px;
 }
 .itemText {
+    display: none;
     color: #f1e1ca;
     font-family: 'Open Sans', sans-serif;;
     font-size: 14px;
     font-weight: 400;
     text-align: left;
+    padding: 0 22px 22px 22px;
 }
 
-.itemHoverText {
+.item:hover .itemHoverText {
     background-color: #2e2e2e;
     border: 1px solid #2e2e2e;
     border-radius: 5px;
-    z-index: -10;
+    z-index: -15;
+}
+.item:hover .itemText {
+    display: block;
 }

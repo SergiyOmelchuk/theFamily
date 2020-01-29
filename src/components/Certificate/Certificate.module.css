@@ -1,0 +1,39 @@
+.certificate {
+    text-align: left;
+    display: grid;
+    grid-template-areas:
+            "title img"
+            "text img"
+            "button img";
+    grid-template-columns: 550px 1fr;
+    padding: 0 60px;
+}
+.title {
+    grid-area: title;
+    align-self: flex-end;
+}
+.text {
+    grid-area: text;
+    font-size: 14px;
+    color: #f1e1ca;
+    align-self: start;
+    padding-top: 30px;
+    padding-right: 60px;
+   }
+.img {
+    grid-area: img;
+    justify-self: right;
+}
+.img img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+.button {
+    grid-area: button;
+    align-self: start;
+    padding-left: 60px;
+}
+.buttonBuyCertificate {
+    width: 300px;
+}

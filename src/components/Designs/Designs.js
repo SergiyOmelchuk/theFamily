@@ -8,7 +8,7 @@ import image3 from "./img/design3.jpg";
 
 function Designs() {
     return (
-        <div className={s.designs}>
+        <div id="designs" className={s.designs}>
             <div className={`${s.title} ${c.titleCommon}`}>
                 Choice of designs
             </div>

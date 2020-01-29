@@ -13,7 +13,7 @@ function Header() {
                     <a href="#"></a>
                 </div>
                 <nav className={s.header_menu}>
-                    <a href="#">DESIGNS</a>
+                    <a href="/#designs">DESIGNS</a>
                     <a href="#">Price List</a>
                     <a href="#">Reviews</a>
                     <a href="#">Contacts</a>

@@ -20,44 +20,18 @@
     padding-bottom: 60px;
 }
 
-.mainText {
-    text-transform: uppercase;
-    font-size: 30px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    color: #fff;
-    letter-spacing: .83px;
-}
-.text {
-    color: #a49183;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-}
 .buttonBlock {
     grid-area: buttons;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.buttonBlock:first-child {
+    margin-right: 40px;
 }
 .buttonChooseDesign,
 .buttonCreateSite {
     font-size: 15px;
     width: 240px;
 }
-.buttonCreateSite {
-    margin-left: 40px;
-    background-color: #9f7b51;
-}
-.buttonChooseDesign:hover {
-    background-color: #9f7b51;
-}
-.buttonCreateSite:hover {
-    background-color: #936431;
-    border: 3px solid #936431;
-}
 
-textarea {
-    width: 100%;
-    height: 100%;
-}
-.editMode {
-    border: 2px solid red;
-}

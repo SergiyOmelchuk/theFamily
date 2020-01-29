@@ -37,7 +37,7 @@ function App() {
                     <HowItWork/>
                     <Designs/>
                     <Prices/>
-                    <Certificate/>
+                    <Certificate />
                     <Reviews/>
                     <Faq/>
                     <Footer/>
