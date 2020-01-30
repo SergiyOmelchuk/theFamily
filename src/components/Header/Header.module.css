@@ -59,11 +59,14 @@
 .active {
     color: #fff;
     border: 2px solid black;
-    padding: 15px;
-    background-color: grey;
+    /*padding: 15px;*/
+    background-color: firebrick;
+    transform: scale(1.5);
 }
 button {
     padding: 10px;
+    cursor: pointer;
+    margin-left: 10px;
 }
 
 .activeEditMode {
