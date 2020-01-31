@@ -7,6 +7,7 @@ import {updateText} from "../redux/Landing-reducer";
 let mapStateToProps = (state) => {
     return {
         landingEditMode: state.landingPage.landingEditMode,
+        language: state.landingPage.language,
         mainTitle: state.landingPage.mainBlock.mainTitle,
         mainMainText: state.landingPage.mainBlock.mainMainText,
         mainText: state.landingPage.mainBlock.mainText,

@@ -1,15 +1,41 @@
 let initialState = {
+        landingEditMode: false,
+        language: "uk",
         mainBlock: {
             mainBackgroundUrl: "../../img/header_background.jpg",
-            mainTitle: "Your wedding site",
-            mainMainText: "ALL YOUR WEDDING MOMENTS IN ONE PLACE",
-            mainText: "Create your personal beautiful site in minutes. " +
-                "Choose a design, add text, photos and videos. Share the link with your guests and relatives, acquaint them with each other. " +
-                "Prepare for the celebration in advance. Your site will look equally nice on any gadget.",
-            mainMainButtonText: "CREATE SITE",
-            mainSecondaryButtonText: "CHOOSE DESIGN"
+            mainTitle: {
+                en: "Your wedding site",
+                ru: "Твой свадебный сайт",
+                uk: "Твій сайт весілля"
+            },
+            mainMainText: {
+                en: "ALL YOUR WEDDING MOMENTS IN ONE PLACE",
+                ru: "Все о вашей свадьбе в едином месте",
+                uk: "Все про ваше весілля в єдиному місці"
+            },
+            mainText: {
+                en: "Create your personal beautiful site in minutes. " +
+                    "Choose a design, add text, photos and videos. Share the link with your guests and relatives, acquaint them with each other. " +
+                    "Prepare for the celebration in advance. Your site will look equally nice on any gadget.",
+                ru: "Создавайте собственный красивый сайт в считаные минуты. Выберите дизайн, добавьте текст, фото и видео. Делитесь ссылкой на сайт " +
+                    "с гостями и родственниками, знакомьте их друг с другом. Готовтесь к торжеству заранее. Ваш сайт будет одинаково красиво смотреться " +
+                    "на любом гаджете.",
+                uk: "Створюйте власний гарний сайт за лічені хвилини. Виберіть дизайн, додайте текст, фото і відео. Діліться посиланням на сайт з " +
+                    "гостями і родичами, знайомте їх один з одним. Підготуйтесь до церемонії заздалегідь. Ваш сайт буде гарно виглядати на будь-якому " +
+                    "гаджеті."
+            },
+            mainMainButtonText: {
+                en: "CREATE SITE",
+                ru: "Создать сайт",
+                uk: "Створити сайт"
+            },
+            mainSecondaryButtonText: {
+                en: "CHOOSE DESIGN",
+                ru: "Выбрать дизайн",
+                uk: "Вибрати дизайн"
+            },
         },
-        landingEditMode: false,
+
         features: {
             title: "What will you get",
             block1: {
@@ -224,8 +250,9 @@ const landingReducer = (state = initialState, action) => {
                 ...state, mainBlock: {...state.mainBlock, mainText: action.newText}
             }
         case "mainMainButtonText":
+            debugger
             return {
-                ...state, mainBlock: {...state.mainBlock, mainMainButtonText: action.newText}
+                ...state, mainBlock: {...state.mainBlock, mainMainButtonText: {...state.mainBlock.mainMainButtonText, uk: action.newText}}
             }
         case "mainSecondaryButtonText":
             return {
@@ -241,21 +268,27 @@ const landingReducer = (state = initialState, action) => {
                 ...state,
                 landingEditMode: false
             }
+            case "TOGGLE-LANGUAGE":
+            return {
+                ...state,
+                language: action.language
+            }
         default:
             return state;
     }
 };
 
 
-export let setText = (newText, blockName) => ({type: blockName, newText});
+export let setText = (newText, blockName, language) => ({type: blockName, newText, language});
 export let onLandingEditMode = () => ({type: "ON-LANDING-EDIT-MODE"});
-export let offLandingEditMode = () => ({type: "OFF-LANDING-EDIT-MODE" });
+export let offLandingEditMode = () => ({type: "OFF-LANDING-EDIT-MODE"});
+export let toggleLanguage = (language) => ({type: "TOGGLE-LANGUAGE", language});
 export let EditMode = () => ({type: "SET-EDIT-MODE",});
 
-export const updateText = (newText, blockName) => {
+export const updateText = (newText, blockName, language) => {
     debugger
     return (dispatch) => {
-        dispatch(setText(newText, blockName));
+        dispatch(setText(newText, blockName, language));
     }
 
 }
@@ -270,6 +303,13 @@ export const deactivateLandingEditMode = () => {
         dispatch(offLandingEditMode());
     }
 }
+
+export  const changeLanguage = (language) => {
+    return (dispatch) => {
+        dispatch(toggleLanguage(language));
+    }
+}
+
 
 
 export let addMessageActiveCreation = (newMessageText) => ({type: "ADD-MESSAGE", newMessageText});

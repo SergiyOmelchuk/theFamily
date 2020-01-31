@@ -25,7 +25,7 @@ class Button extends Component {
     }
     state = {
         editMode: false,
-        text: this.props.text
+        text: this.props.text[this.props.language]
     }
     activateEditMode = (editor) => {
         this.setState({
@@ -37,7 +37,7 @@ class Button extends Component {
             editMode: false
         });
         debugger
-        this.props.updateText(this.state.text, this.props.blockName);
+        this.props.updateText(this.state.text, this.props.blockName, this.props.language);
     }
     onStatusChange = (e) => {
         this.setState({

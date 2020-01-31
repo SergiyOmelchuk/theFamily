@@ -4,7 +4,7 @@ import Button from "../../common/components/Button/Button";
 import Text from "../../common/components/Text/Text";
 
 
-function Main({mainTitle, mainMainText, mainText, mainMainButtonText, mainSecondaryButtonText, landingEditMode, updateText}) {
+function Main({mainTitle, mainMainText, mainText, mainMainButtonText, mainSecondaryButtonText, landingEditMode, language, updateText}) {
     return (
         <div>
             {/*<div id="main" className={s.main}>*/}
@@ -26,16 +26,19 @@ function Main({mainTitle, mainMainText, mainText, mainMainButtonText, mainSecond
                           blockName="mainTitle"
                           text={mainTitle}
                           landingEditMode={landingEditMode}
+                          language={language}
                           updateText={updateText}/>
                     <Text className="mainText"
                           blockName="mainMainText"
                           text={mainMainText}
                           landingEditMode={landingEditMode}
+                          language={language}
                           updateText={updateText}/>
                     <Text className="text"
                           blockName="mainText"
                           text={mainText}
                           landingEditMode={landingEditMode}
+                          language={language}
                           updateText={updateText}/>
                 </div>
                 <div className={s.buttonBlock}>
@@ -45,6 +48,7 @@ function Main({mainTitle, mainMainText, mainText, mainMainButtonText, mainSecond
                             blockName="mainSecondaryButtonText"
                             text={mainSecondaryButtonText}
                             landingEditMode={landingEditMode}
+                            language={language}
                             updateText={updateText}/>
                     <Button className="button main"
                             style={{width: "240px"}}
@@ -52,6 +56,7 @@ function Main({mainTitle, mainMainText, mainText, mainMainButtonText, mainSecond
                             blockName="mainMainButtonText"
                             text={mainMainButtonText}
                             landingEditMode={landingEditMode}
+                            language={language}
                             updateText={updateText}/>
                 </div>
             </div>

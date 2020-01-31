@@ -4,13 +4,13 @@ import logo from "../../img/logo.png";
 import {NavLink} from "react-router-dom";
 import {connect} from "react-redux";
 import {
-    activateLandingEditMode,
+    activateLandingEditMode, changeLanguage,
     deactivateLandingEditMode
 } from "../redux/Landing-reducer";
-import Main from "../Main/Main";
+import Languages from "../Languages/Languages";
 
 
-function Header({landingEditMode, activateLandingEditMode, deactivateLandingEditMode}) {
+function Header({landingEditMode, activateLandingEditMode, deactivateLandingEditMode, changeLanguage}) {
     return (
         <header id="header" className={s.header}>
             {landingEditMode &&
@@ -36,12 +36,13 @@ function Header({landingEditMode, activateLandingEditMode, deactivateLandingEdit
                             Off
                         </button>
                     </a>
-
+                    <Languages changeLanguage={changeLanguage}/>
                 </nav>
                 <div className={s.header_login}>
                     <a className={s.header_language} href="#"></a>
                     <a href="#">Sign in</a>
                 </div>
+
             </div>
         </header>
     )
@@ -50,9 +51,10 @@ function Header({landingEditMode, activateLandingEditMode, deactivateLandingEdit
 
 let mapStateToProps = (state) => {
     return {
-        landingEditMode: state.landingPage.landingEditMode
+        landingEditMode: state.landingPage.landingEditMode,
+        language: state.landingPage.language
     };
 };
 
 
-export default connect(mapStateToProps, {deactivateLandingEditMode, activateLandingEditMode})(Header);
+export default connect(mapStateToProps, {deactivateLandingEditMode, activateLandingEditMode, changeLanguage})(Header);

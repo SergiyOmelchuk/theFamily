@@ -17,9 +17,10 @@ class Text extends Component {
         className: "",
         blockName: "",
     }
+
     state = {
         editMode: false,
-        text: this.props.text
+        text: this.props.text[this.props.language]
     }
     activateEditMode = (editor) => {
         this.setState({
