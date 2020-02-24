@@ -15,7 +15,8 @@
     letter-spacing: 1.87px;
     color: #f8f4f1;
     background-color: transparent;
-    padding: 20px 0;
+    /*padding: 20px 0;*/
+    padding: 1.4vw 0;
     border: 3px solid #9f7b51;
     border-radius: 40px;
     cursor: pointer;
@@ -26,7 +27,8 @@
 }
 .buttonMainCommon:hover {
     background-color: #936431;
-    border: 3px solid #936431;
+    /*border: 3px solid #936431;*/
+    border: .21vw solid #936431;
 }
 .buttonSecondaryCommon:hover {
     background-color: #9f7b51;

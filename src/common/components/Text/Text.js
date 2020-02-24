@@ -3,24 +3,31 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import './Text.css';
+import {connect} from "react-redux";
+import {updateText} from "../../../components/redux/Landing-reducer";
 
 class Text extends Component {
 
     static propTypes = {
         text: PropTypes.string,
-        className: PropTypes.string,
         blockName: PropTypes.string,
     }
 
     static defaultProps = {
         text: '',
-        className: "",
         blockName: "",
     }
+componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.text != this.props.text) {
+        this.setState({
+            text: this.props.text
+        })
+    }
+}
 
     state = {
         editMode: false,
-        text: this.props.text[this.props.language]
+        text: this.props.text
     }
     activateEditMode = (editor) => {
         this.setState({
@@ -31,8 +38,7 @@ class Text extends Component {
         this.setState({
             editMode: false
         });
-        debugger
-        this.props.updateText(this.state.text, this.props.blockName);
+        this.props.updateText(this.state.text, this.props.blockName, this.props.language);
     }
     onStatusChange = (e) => {
         this.setState({
@@ -42,30 +48,28 @@ class Text extends Component {
 
     render() {
         const {editMode, text} = this.state;
-        const {className, landingEditMode} = this.props;
+        const { landingEditMode, language} = this.props;
 
-        const classes = classNames(
-            className
-        );
+
         return (
             <div>
                 {!landingEditMode &&
-                <div className={classes}>
-                    {text}
+                <div >
+                    {text[language]}
                 </div>
                 }
 
                 {landingEditMode && !editMode &&
-                <div className={classes} onDoubleClick={this.activateEditMode}>
-                    {text}
+                <div onDoubleClick={this.activateEditMode}>
+                    {text[language]}
                 </div>
                 }
 
                 {landingEditMode && editMode &&
-                <div className={classes}>
+                <div>
                             <textarea onChange={this.onStatusChange} autoFocus={true}
                                       onBlur={this.deActivateEditMode}
-                                      value={text}> </textarea>
+                                      value={text[language]}> </textarea>
                 </div>
                 }
             </div>
@@ -75,4 +79,12 @@ class Text extends Component {
 
 }
 
-export default Text;
+let mapStateToProps = (state) => {
+    return {
+        landingEditMode: state.landingPage.landingEditMode,
+        language: state.landingPage.language
+    };
+};
+
+
+export default connect(mapStateToProps, {updateText})(Text);

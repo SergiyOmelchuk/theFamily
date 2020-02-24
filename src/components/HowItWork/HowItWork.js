@@ -1,67 +1,67 @@
 import React from "react";
-import s from "./HowItWork.module.css"
-import c from "../../common/commonStyles.module.css";
+import s from "./HowItWork.module.css";
 import {connect} from "react-redux";
 import {updateText} from "../redux/Landing-reducer";
+import Text from "../../common/components/Text/Text";
 
 
-function HowItWork(props) {
+function HowItWork({ howItWorks, language }) {
     return (
         <div className={s.howItWork}>
-            <div className={`${s.title} ${c.titleCommon}`}>
-                {props.howItWorks.title}
+            <div className={s.title} >
+                <Text blockName="howItWorkTitle" text={howItWorks.title}/>
             </div>
             <div className={s.itemsBlock}>
                 <div className={s.item}>
                     <div className={s.itemNumber}>
-                        {props.howItWorks.block1.number}
+                        {howItWorks.block1.number[language]}
                     </div>
                     <div className={s.itemHoverText}>
                         <div className={s.itemTitle}>
-                            {props.howItWorks.block1.title}
+                            {howItWorks.block1.title[language]}
                         </div>
                         <div className={s.itemText}>
-                            {props.howItWorks.block1.text}
+                            {howItWorks.block1.text[language]}
                         </div>
                     </div>
                 </div>
                 <div className={s.item}>
                     <div className={s.itemNumber}>
-                        {props.howItWorks.block2.number}
+                        {howItWorks.block2.number[language]}
                     </div>
                     <div className={s.itemHoverText}>
                         <div className={s.itemTitle}>
-                            {props.howItWorks.block2.title}
+                            {howItWorks.block2.title[language]}
                         </div>
                         <div className={s.itemText}>
-                            {props.howItWorks.block2.text}
-                        </div>
-                    </div>
-                </div>
-                <div className={s.item}>
-                    <div className={s.itemNumber}>{props.howItWorks.block3.number}</div>
-                    <div className={s.itemHoverText}>
-                        <div className={s.itemTitle}>{props.howItWorks.block3.title}</div>
-                        <div className={s.itemText}>
-                            {props.howItWorks.block3.text}
+                            {howItWorks.block2.text[language]}
                         </div>
                     </div>
                 </div>
                 <div className={s.item}>
-                    <div className={s.itemNumber}>{props.howItWorks.block4.number}</div>
+                    <div className={s.itemNumber}>{howItWorks.block3.number[language]}</div>
                     <div className={s.itemHoverText}>
-                        <div className={s.itemTitle}>{props.howItWorks.block4.title}</div>
+                        <div className={s.itemTitle}>{howItWorks.block3.title[language]}</div>
                         <div className={s.itemText}>
-                            {props.howItWorks.block4.text}
+                            {howItWorks.block3.text[language]}
                         </div>
                     </div>
                 </div>
                 <div className={s.item}>
-                    <div className={s.itemNumber}>{props.howItWorks.block5.number}</div>
+                    <div className={s.itemNumber}>{howItWorks.block4.number[language]}</div>
                     <div className={s.itemHoverText}>
-                        <div className={s.itemTitle}>{props.howItWorks.block5.title}</div>
+                        <div className={s.itemTitle}>{howItWorks.block4.title[language]}</div>
                         <div className={s.itemText}>
-                            {props.howItWorks.block5.text}
+                            {howItWorks.block4.text[language]}
+                        </div>
+                    </div>
+                </div>
+                <div className={s.item}>
+                    <div className={s.itemNumber}>{howItWorks.block5.number[language]}</div>
+                    <div className={s.itemHoverText}>
+                        <div className={s.itemTitle}>{howItWorks.block5.title[language]}</div>
+                        <div className={s.itemText}>
+                            {howItWorks.block5.text[language]}
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,8 @@ function HowItWork(props) {
 
 let mapStateToProps = (state) => {
     return {
-        howItWorks: state.landingPage.howItWorks
+        howItWorks: state.landingPage.howItWorks,
+        language: state.landingPage.language
     };
 };
 

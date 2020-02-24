@@ -8,13 +8,16 @@
     text-align: center;
 }
 
+.title {
+    color: #e3c597;
+    font-size: 72px;
+    font-weight: 400;
+    font-family: 'Prata', serif;
+}
+
 .block1 {
     display: grid;
-    grid-template-areas:
-            "title title title photo1 photo1 photo1"
-            "title title title photo1 photo1 photo1"
-    "text1 text1 text2 text2 photo2 photo2"
-    "text3 text3 text4 text4 photo2 photo2";
+    grid-template-areas: "title title title photo1 photo1 photo1" "title title title photo1 photo1 photo1" "text1 text1 text2 text2 photo2 photo2" "text3 text3 text4 text4 photo2 photo2";
     grid-template-rows: 160px 160px 160px 160px;
     grid-template-columns: 17% 17% 17% 17% 17% 15%;
     padding: 0 60px 100px 60px;
@@ -30,24 +33,29 @@
     grid-area: photo1;
     justify-self: center;
 }
-
-.photo1_img {
-    background-image: url("./img/photo_features_1.jpg");
+.photo2 {
+    grid-area: photo2;
+    justify-self: right;
+}
+.photo1,
+.photo2 {
     width: 245px;
     height: 245px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     box-shadow: 0 0 0 6px #9f7b51, 0 0 0 14px #000;
     outline: 2px solid #9f7b51;
     outline-offset: -2px;
     position: relative;
 }
 
+.photo1 img,
+.photo2 img {
+    width: 100%;
+}
+
 .photo_rightShadowElement {
     background-color: #000;
-    width: 245px;
-    height: 245px;
+    width: 100%;
+    height: 100%;
     outline: 8px solid #645038;
     outline-offset: -3px;
     position: absolute;
@@ -57,25 +65,9 @@
 }
 
 
-.photo2 {
-    grid-area: photo2;
-    justify-self: right;
-    padding-right: 36px;
 
-}
 
-.photo2_img {
-    background-image: url("./img/photo_features_2.jpg");
-    width: 245px;
-    height: 245px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 0 0 6px #9f7b51, 0 0 0 14px #000;
-    outline: 2px solid #9f7b51;
-    outline-offset: -2px;
-    position: relative;
-}
+
 
 .text1, .text2, .text3, .text4 {
     padding-top: 50px;
@@ -140,11 +132,14 @@
 .block2_text2,
 .block2_text3 {
     padding-right: 37px;
+    max-height: 160px;
+    overflow: auto;
 }
 
 .block2_text1 {
     grid-area: block2text1;
-    padding-top: 70px;
+    padding-top: 30px;
+    overflow: visible;
 }
 
 .block2_text2 {
@@ -168,48 +163,38 @@
     grid-template-columns: 33% 33% 34%;
     padding: 0 60px 40px 60px;
 }
+
 .block3_photo1 {
     grid-area: block3photo1;
-    padding-left: 40px;
-    padding-bottom: 35px;
+    margin-left: 40px;
+    /*padding-bottom: 35px;*/
     margin-bottom: 35px;
 }
-.block3_photo1_img {
-    background-image: url("./img/features_block3_photo1.jpg");
-    width: 245px;
-    height: 245px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 0 0 6px #9f7b51, 0 0 0 14px #000;
-    outline: 2px solid #9f7b51;
-    outline-offset: -2px;
-    position: relative;
-}
-
 .block3_photo2 {
     grid-area: block3photo2;
     justify-self: end;
-    padding-right: 30px;
+    margin-right: 30px;
 }
 
-.block3_photo2_img {
-    background-image: url("./img/features_block3_photo2.jpg");
+.block3_photo1,
+.block3_photo2 {
     width: 245px;
     height: 245px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     box-shadow: 0 0 0 6px #9f7b51, 0 0 0 14px #000;
     outline: 2px solid #9f7b51;
     outline-offset: -2px;
     position: relative;
 }
+.block3_photo1 img,
+.block3_photo2 img{
+    width: 100%;
+}
+
 
 .photo_leftShadowElement {
     background-color: #000;
-    width: 245px;
-    height: 245px;
+    width: 100%;
+    height: 100%;
     outline: 8px solid #645038;
     outline-offset: -3px;
     position: absolute;
@@ -220,6 +205,11 @@
 
 .block3_title {
     grid-area: block3title;
+}
+
+.block3_text1, .block3_text2, .block3_text3 {
+    max-height: 160px;
+    overflow: auto;
 }
 
 .block3_text1 {
@@ -238,11 +228,7 @@
 
 .block4 {
     display: grid;
-    grid-template-areas:
-            "block4text1 block4title"
-            "block4text1 block4title"
-            "block4text2 block4text4"
-            "block4text3 block4text5";
+    grid-template-areas: "block4text1 block4title" "block4text1 block4title" "block4text2 block4text4" "block4text3 block4text5";
     justify-content: space-between;
     grid-template-rows: 180px;
     grid-template-columns: 50% 50%;
@@ -252,30 +238,115 @@
     background-size: cover;
     background-position: left;
 }
+
 .block4_title {
     grid-area: block4title;
     margin-bottom: 50px;
 }
+
 .block4_text1,
 .block4_text2,
 .block4_text3 {
     padding-right: 70px;
+    max-height: 160px;
+    overflow: auto;
 }
+
+
 .block4_text1 {
     grid-area: block4text1;
     align-self: end;
     margin-bottom: 50px;
 }
+
 .block4_text2 {
     grid-area: block4text2;
     margin-bottom: 50px;
 }
+
 .block4_text3 {
     grid-area: block4text3;
 }
+
 .block4_text4 {
     grid-area: block4text4;
 }
+
 .block4_text5 {
     grid-area: block4text5;
+}
+
+@media (max-width: 1366px) {
+
+    .title {
+        font-size: 60px;
+    }
+    .titleText {
+        font-size: 16px;
+    }
+
+    .text {
+        font-size: 13px;
+    }
+    .text1, .text2, .text3, .text4 {
+        padding-top: 5px;
+        padding-right: 20px;
+        max-height: 160px;
+        overflow: auto;
+    }
+
+    .block1 {
+        padding: 0 30px 100px 30px;
+    }
+    .photo1,
+    .photo2 {
+        width: 220px;
+        height: 220px;
+    }
+    .titleBlock {
+        padding-right: 20px;
+    }
+
+    .block2, .block4 {
+        padding: 0px 90px 100px 75px;
+    }
+
+    .block3 {
+        padding: 0 30px 100px 30px;
+        grid-template-columns: 45% 45% auto;
+    }
+
+    .block3_photo2, .block3_photo1 {
+        display: none;
+    }
+
+    .titleBlock, .block2_title, .block3_title, .block4_title {
+        line-height: 1;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 54px;
+    }
+    .titleText {
+        font-size: 15px;
+    }
+    .text {
+        font-size: 12px;
+    }
+    .photo1,
+    .photo2 {
+        width: 200px;
+        height: 200px;
+    }
+    .block2_text2 {
+        padding-bottom: 5px;
+    }
+}
+
+@media (max-width: 414px) {
+
+
 }

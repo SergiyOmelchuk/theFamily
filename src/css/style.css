@@ -65,7 +65,7 @@ body {
     color: white;
 }
 .header_language:before {
-    content: "\e900";
+    content: "\e9c9";
     font-family: 'icomoon' !important;
     font-weight: 400;
     text-transform: none;

@@ -1,0 +1,137 @@
+.register {
+    width: 100vw;
+    background-color: #1a1a1a;
+    margin: 75px auto 0 auto;
+    padding: 40px 0 100px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.register a {
+    color: #e5c490;
+}
+
+.title {
+    font-size: 36px;
+    color: #fff;
+    font-family: 'Prata', serif;
+    padding-bottom: 27px;
+}
+
+
+
+.itemsBlock {
+    display: flex;
+    position: relative;
+    text-align: center;
+}
+
+.item {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.itemNumber {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-family: 'Open Sans', sans-serif;;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #9f7b51;
+    border: 1px solid #9f7b51;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: -15px;
+    z-index: 2;
+}
+
+.itemsBlock::before {
+    content: "";
+    top: 20px;
+    left: 17%;
+    position: absolute;
+    width: 67%;
+    border: 2px solid #9f7b51;
+}
+
+.itemTitle {
+    display: block;
+    font-family: 'Open Sans', sans-serif;;
+    font-size: 15px;
+    font-weight: 700;
+    color: #c79e6c;
+    letter-spacing: 1.87px;
+    text-transform: uppercase;
+    padding: 13px 0px 17px 0px;
+    margin-top: 20px;
+}
+.itemTitle_active {
+    color: #fff;
+}
+
+.itemText {
+    display: none;
+    color: #f1e1ca;
+    font-family: 'Open Sans', sans-serif;;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    padding: 0 22px 22px 22px;
+}
+
+.inputsBlock {
+    padding: 35px 45px 50px 45px;
+}
+.name,
+.url {
+    text-align: right;
+    color: white;
+}
+
+.name input,
+.url input,
+.date input {
+    border-radius: 50px;
+    background-color: #1b1b1b;
+    border: 1px solid #9f7b51;
+    color: white;
+    width: 330px;
+    height: 35px;
+    margin: 10px 0 10px 20px;
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+.loginTextBlock {
+    color: white;
+}
+
+.buttonBlock div {
+    width: 160px;
+}
+.buttonBlock {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 35px;
+}
+
+.socialButtonBlock {
+    display: flex;
+    order: -2;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.socialButtonBlock button {
+    margin: 10px 15px;
+}

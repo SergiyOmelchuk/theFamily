@@ -1,0 +1,16 @@
+.languages {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 10px;
+    /*position: fixed;*/
+    /*top: 0;*/
+}
+.languages a {
+    color: black;
+    font-size: 15px;
+}

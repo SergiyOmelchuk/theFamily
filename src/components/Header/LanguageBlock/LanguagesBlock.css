@@ -1,0 +1,12 @@
+.languagesBlock {
+    cursor: pointer;
+}
+span {
+    padding: 2px 7px;
+}
+.activeLanguageClass {
+    border: 1px solid #fff;
+    border-radius: 50px;
+    font-weight: 700;
+    color: #fff;
+}

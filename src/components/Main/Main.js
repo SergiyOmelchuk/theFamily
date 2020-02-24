@@ -2,11 +2,14 @@ import React from "react";
 import s from "./Main.module.css";
 import Button from "../../common/components/Button/Button";
 import Text from "../../common/components/Text/Text";
+import {connect} from "react-redux";
+import {updateText} from "../redux/Landing-reducer";
 
 
 function Main({mainTitle, mainMainText, mainText, mainMainButtonText, mainSecondaryButtonText, landingEditMode, language, updateText}) {
     return (
         <div>
+
             {/*<div id="main" className={s.main}>*/}
 
             {/*    <div className={s.buttonBlock}>*/}
@@ -22,46 +25,48 @@ function Main({mainTitle, mainMainText, mainText, mainMainButtonText, mainSecond
             {/*</div>*/}
             <div id="main" className={s.main}>
                 <div blockName="textBlock" className={s.textBlock}>
-                    <Text className="title"
-                          blockName="mainTitle"
-                          text={mainTitle}
-                          landingEditMode={landingEditMode}
-                          language={language}
-                          updateText={updateText}/>
-                    <Text className="mainText"
-                          blockName="mainMainText"
-                          text={mainMainText}
-                          landingEditMode={landingEditMode}
-                          language={language}
-                          updateText={updateText}/>
-                    <Text className="text"
-                          blockName="mainText"
-                          text={mainText}
-                          landingEditMode={landingEditMode}
-                          language={language}
-                          updateText={updateText}/>
+                    <div className={s.title}>
+                        <Text blockName="mainTitle"
+                              text={mainTitle}/>
+                    </div>
+                    <div className={s.mainText}>
+                        <Text blockName="mainMainText"
+                              text={mainMainText}/>
+                    </div>
+                    <div className={s.text}>
+                        <Text blockName="mainText"
+                              text={mainText}/>
+                    </div>
+
                 </div>
                 <div className={s.buttonBlock}>
                     <Button className="button secondary"
                             style={{width: "240px", marginRight: "40px"}}
                             onClick={() => alert("Hello world")}
                             blockName="mainSecondaryButtonText"
-                            text={mainSecondaryButtonText}
-                            landingEditMode={landingEditMode}
-                            language={language}
-                            updateText={updateText}/>
+                            text={mainSecondaryButtonText}/>
                     <Button className="button main"
                             style={{width: "240px"}}
                             onClick={() => alert("Hello world")}
                             blockName="mainMainButtonText"
-                            text={mainMainButtonText}
-                            landingEditMode={landingEditMode}
-                            language={language}
-                            updateText={updateText}/>
+                            text={mainMainButtonText}/>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Main;
+
+let mapStateToProps = (state) => {
+    return {
+        landingEditMode: state.landingPage.landingEditMode,
+        language: state.landingPage.language,
+        mainTitle: state.landingPage.mainBlock.mainTitle,
+        mainMainText: state.landingPage.mainBlock.mainMainText,
+        mainText: state.landingPage.mainBlock.mainText,
+        mainMainButtonText: state.landingPage.mainBlock.mainMainButtonText,
+        mainSecondaryButtonText: state.landingPage.mainBlock.mainSecondaryButtonText
+    };
+};
+
+export default connect(mapStateToProps, {updateText})(Main);

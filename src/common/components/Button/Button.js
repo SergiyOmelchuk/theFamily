@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import './Button.css';
+import {connect} from "react-redux";
+import {updateText} from "../../../components/redux/Landing-reducer";
 
 class Button extends Component {
 
@@ -23,9 +25,16 @@ class Button extends Component {
         width: 300,
         fontSize: "15px",
     }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.text != this.props.text) {
+            this.setState({
+                text: this.props.text
+            })
+        }
+    }
     state = {
         editMode: false,
-        text: this.props.text[this.props.language]
+        text: this.props.text
     }
     activateEditMode = (editor) => {
         this.setState({
@@ -36,7 +45,6 @@ class Button extends Component {
         this.setState({
             editMode: false
         });
-        debugger
         this.props.updateText(this.state.text, this.props.blockName, this.props.language);
     }
     onStatusChange = (e) => {
@@ -49,7 +57,7 @@ class Button extends Component {
 
     render() {
         const { editMode, text } = this.state;
-        const { onClick, className, style, landingEditMode } = this.props;
+        const { onClick, className, style, landingEditMode, language } = this.props;
 
         const classes = classNames(
             className
@@ -57,13 +65,13 @@ class Button extends Component {
         return (
             <div>
                 {!landingEditMode &&
-                <div  className={classes} style={style}onClick={onClick} >
-                    {text}
+                <div  className={classes} style={style} onClick={onClick} >
+                    {text[language]}
                 </div>
                 }
                 {landingEditMode && !editMode &&
                 <div className={classes} style={style} onDoubleClick={this.activateEditMode}>
-                    {text}
+                    {text[language]}
                 </div>
                 }
 
@@ -71,7 +79,7 @@ class Button extends Component {
                 <div  className={classes} style={style}>
                             <textarea onChange={this.onStatusChange} autoFocus={true}
                                       onBlur={this.deActivateEditMode}
-                                      value={text}> </textarea>
+                                      value={text[language]}> </textarea>
                 </div>
                 }
             </div>
@@ -81,4 +89,12 @@ class Button extends Component {
 
 }
 
-export default Button;
+let mapStateToProps = (state) => {
+    return {
+        landingEditMode: state.landingPage.landingEditMode,
+        language: state.landingPage.language
+    };
+};
+
+
+export default connect(mapStateToProps, {updateText})(Button);

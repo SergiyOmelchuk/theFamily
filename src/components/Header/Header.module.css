@@ -1,61 +1,116 @@
 .header {
     position: fixed;
-    top:23px;
+    top: 13px;
     width: 100%;
-    background-color: transparent;
     z-index: 10;
 }
+
 .container_header {
-    width: 1320px;
-    margin: 0 auto;
-    padding: 10px 35px 0px 35px;
     width: 100%;
+    margin: 0 auto;
+    padding: 20px 35px 20px 35px;
     display: grid;
-    grid-template-areas:
-            "logo nav sign";
+    grid-template-areas: "logo nav languages sign";
     justify-content: space-between;
-    /*grid-template-columns: 1fr 50% 1fr;*/
-    align-items: center;
+    grid-template-columns: 20% 60% 10% 10%;
+    align-items: start;
+    position: absolute;
+    background-color: transparent;
+
 }
+
 .header_logo {
     grid-area: logo;
     padding-right: 40px;
+    position: relative;
+    max-height: 20px;
 }
-.header_logo_img {
+
+.header_logo img {
+    position: relative;
+    top: -20px;
     max-width: 200px;
 }
+
 .header_menu {
     grid-area: nav;
     padding-right: 30px;
 }
+
+.header_menu div {
+    display: flex;
+    justify-content: center;
+}
+
 .header a {
     color: white;
     font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1.66px;
+}
+
+.header_menu a {
     padding-right: 25px;
 }
+
 .header a:hover {
     color: #e2c691;
 }
+
 .header_login {
     grid-area: sign;
 }
-.header_login a {
-    color: #e2c691;
-}
-.header_login a:hover {
-    color: white;
-}
-.header_language:before {
-    content: "\e900";
-    font-family: 'icomoon' !important;
-    font-weight: 400;
-    text-transform: none;
-    letter-spacing: normal;
+
+.header_languagesBlock {
+    grid-area: languages;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
 
 }
+
+.header_languagesBlock {
+    color: white;
+}
+
+.header_languagesBlock span::before {
+    content: "| ";
+    color: white;
+}
+
+.header_languagesBlock span:first-child::before {
+    content: none;
+}
+
+.activeLanguage {
+    color: #e2c691;
+    font-weight: 700;
+}
+
+.header_icon {
+    grid-area: icon;
+    color: #e2c691;
+    cursor: pointer;
+    justify-self: center;
+    align-self: center;
+    font-size: 20px;
+}
+
+.header_languagesBlock:hover .header_icon {
+    transform: scale(1.2);
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.header_languagesBlock:hover section {
+    display: block;
+}
+
+
 .active {
     color: #fff;
     border: 2px solid black;
@@ -63,11 +118,7 @@
     background-color: firebrick;
     transform: scale(1.5);
 }
-button {
-    padding: 10px;
-    cursor: pointer;
-    margin-left: 10px;
-}
+
 
 .activeEditMode {
     position: fixed;
@@ -77,4 +128,78 @@ button {
     padding: 15px;
     background-color: firebrick;
     color: #fff;
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+
+    .header a {
+        font-size: 16px;
+    }
+
+    .editMode {
+        display: none;
+    }
+
+    .container_header {
+        padding: 20px 5px 20px 5px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .header a {
+        font-size: 16px;
+    }
+
+    .editMode {
+        display: none;
+    }
+
+    .container_header {
+        padding: 15px 5px 15px 5px;
+    }
+    .header_logo img {
+        max-width: 155px;
+        top: -11px;
+    }
+    .desktop_header {
+        display: none;
+    }
+}
+@media (min-width: 414px) and (max-width: 767px) {
+    .header a {
+        font-size: 16px;
+    }
+    .editMode {
+        display: none;
+    }
+    .container_header {
+        padding: 15px 5px 15px 5px;
+    }
+    .header_logo img {
+        max-width: 155px;
+        top: -11px;
+    }
+    .desktop_header {
+        display: none;
+    }
+}
+
+@media (max-width: 413px) {
+    .header a {
+        font-size: 16px;
+    }
+    .editMode {
+        display: none;
+    }
+    .container_header {
+        padding: 15px 5px 15px 5px;
+    }
+    .header_logo img {
+        max-width: 155px;
+        top: -11px;
+    }
+    .desktop_header {
+        display: none;
+    }
 }

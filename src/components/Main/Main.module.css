@@ -2,25 +2,46 @@
     background-image: url("../../img/header_background.jpg");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: right;
-    min-height: 1123px;
+    background-position: 100%;
+    min-height:140vh;
     display: grid;
     grid-template-areas:
             "content null"
-"buttons null";
+            "buttons null"
+            " text null";
     justify-content: space-between;
-    grid-template-rows: 50% 50%;
-    grid-template-columns: 50% 50%;
+    grid-template-rows: 60vh 40vh auto;
+    grid-template-columns: 748px auto ;
     padding: 0px 60px ;
 }
 .textBlock {
     grid-area: content;
     align-self: end;
     text-align: center;
-    padding-bottom: 60px;
+}
+.title {
+    color: #e3c597;
+    font-size: 72px;
+    font-weight: 400;
+    font-family: 'Prata', serif;
+}
+.mainText {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: .83px;
+}
+.text {
+    color: #a49183;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 .buttonBlock {
+    padding-top: 10vh;
     grid-area: buttons;
     display: flex;
     justify-content: center;
@@ -34,4 +55,54 @@
     font-size: 15px;
     width: 240px;
 }
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .main {
+        background-position: calc(100% + 200px);
+        padding: 0px 10px ;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .main {
+        background-size: cover;
+        min-height:100vh;
+        grid-template-rows: 50vh 50vh auto;
+        background-position: calc(100% + 200px);
+        padding: 0px 10px ;
+    }
+}
+@media (min-width: 414px) and (max-width: 767px) {
+    .main {
+        background-size: cover;
+        min-height:100vh;
+        grid-template-rows: 50vh 50vh auto;
+        background-position: calc(100% + 200px);
+        padding: 0px 10px ;
+    }
+}
+
+@media (max-width: 413px) {
+    .main {
+        background-size: cover;
+        min-height:100vh;
+        grid-template-rows: 70vh 30vh auto;
+        grid-template-columns: 100% 0 ;
+        background-position: calc(100% + 200px);
+        padding: 0px 10px ;
+    }
+    .title {
+        font-size: 72px;
+        text-align: left;
+        padding-left: 20px;
+        line-height: 72px;
+    }
+    .mainText {
+        font-size: 15px;
+    }
+    .text {
+        display: none;
+    }
+
+}
+
 

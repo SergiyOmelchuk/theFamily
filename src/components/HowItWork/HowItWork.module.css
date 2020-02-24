@@ -3,14 +3,21 @@
     margin-bottom: 100px;
     min-height: 350px;
 }
+
 .title {
+    color: #e3c597;
+    font-size: 72px;
+    font-weight: 400;
+    font-family: 'Prata', serif;
     padding-bottom: 60px;
 }
+
 .itemsBlock {
     display: flex;
     position: relative;
     text-align: center;
 }
+
 .item {
     width: 300px;
     display: flex;
@@ -46,6 +53,7 @@
     border: 2px solid #9f7b51;
     z-index: -10;
 }
+
 .itemTitle {
     display: block;
     font-family: 'Open Sans', sans-serif;;
@@ -57,6 +65,7 @@
     padding: 13px 0px 17px 0px;
     margin-top: 20px;
 }
+
 .itemText {
     display: none;
     color: #f1e1ca;
@@ -73,6 +82,13 @@
     border-radius: 5px;
     z-index: -15;
 }
+
 .item:hover .itemText {
     display: block;
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .itemText {
+        padding: 0 10px 10px 10px;
+    }
 }

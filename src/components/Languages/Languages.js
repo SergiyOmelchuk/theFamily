@@ -1,5 +1,5 @@
 import React from "react";
-
+import s from "./Languages.module.css";
 
 function Languages({changeLanguage}) {
 
@@ -8,11 +8,11 @@ function Languages({changeLanguage}) {
     }
 
     return (
-       <div>
-           <button onClick={()=>handleButtonClick("en")}>En</button>
-           <button onClick={()=>handleButtonClick("uk")}>Uk</button>
-           <button onClick={()=>handleButtonClick("ru")}>Ru</button>
-       </div>
+       <section className={s.languages}>
+           <div onClick={()=>handleButtonClick("en")}><a href="">English</a></div>
+           <div onClick={()=>handleButtonClick("uk")}><a href="">Українська</a></div>
+           <div onClick={()=>handleButtonClick("ru")}><a href="">Русский</a></div>
+       </section>
     )
 }
 
