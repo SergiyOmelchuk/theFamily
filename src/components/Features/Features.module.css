@@ -8,12 +8,6 @@
     text-align: center;
 }
 
-.title {
-    color: #e3c597;
-    font-size: 72px;
-    font-weight: 400;
-    font-family: 'Prata', serif;
-}
 
 .block1 {
     display: grid;
@@ -33,10 +27,12 @@
     grid-area: photo1;
     justify-self: center;
 }
+
 .photo2 {
     grid-area: photo2;
     justify-self: right;
 }
+
 .photo1,
 .photo2 {
     width: 245px;
@@ -65,10 +61,6 @@
 }
 
 
-
-
-
-
 .text1, .text2, .text3, .text4 {
     padding-top: 50px;
     padding-right: 50px;
@@ -92,20 +84,8 @@
     grid-area: text4;
 }
 
-.titleText {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #e5c490;
-    letter-spacing: .71px;
-    padding-bottom: 13px;
-}
 
-.text {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+div.text {
     color: #f1e1ca;
 }
 
@@ -170,6 +150,7 @@
     /*padding-bottom: 35px;*/
     margin-bottom: 35px;
 }
+
 .block3_photo2 {
     grid-area: block3photo2;
     justify-self: end;
@@ -185,8 +166,9 @@
     outline-offset: -2px;
     position: relative;
 }
+
 .block3_photo1 img,
-.block3_photo2 img{
+.block3_photo2 img {
     width: 100%;
 }
 
@@ -276,18 +258,16 @@
     grid-area: block4text5;
 }
 
-@media (max-width: 1366px) {
+.slider {
+    display: none;
+}
 
-    .title {
-        font-size: 60px;
-    }
+@media (max-width: 1360px) {
+
     .titleText {
-        font-size: 16px;
+        padding-bottom: 0;
     }
 
-    .text {
-        font-size: 13px;
-    }
     .text1, .text2, .text3, .text4 {
         padding-top: 5px;
         padding-right: 20px;
@@ -298,11 +278,13 @@
     .block1 {
         padding: 0 30px 100px 30px;
     }
+
     .photo1,
     .photo2 {
         width: 220px;
         height: 220px;
     }
+
     .titleBlock {
         padding-right: 20px;
     }
@@ -327,20 +309,13 @@
 
 
 @media (max-width: 768px) {
-    .title {
-        font-size: 54px;
-    }
-    .titleText {
-        font-size: 15px;
-    }
-    .text {
-        font-size: 12px;
-    }
+
     .photo1,
     .photo2 {
         width: 200px;
         height: 200px;
     }
+
     .block2_text2 {
         padding-bottom: 5px;
     }
@@ -348,5 +323,28 @@
 
 @media (max-width: 414px) {
 
+    .block1, .block2, .block3, .block4 {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        /*grid-template-areas: "title" "photo1" "photo2" "text";*/
+        /*grid-template-rows: 200px ;*/
+    }
 
+    .text1, .text2, .text3, .text4,
+    .block2_text1, .block2_text2, .block2_text3, .block2_text4,
+    .block3_text1, .block3_text2, .block3_text3,
+    .block4_text1, .block4_text2, .block4_text3, .block4_text4, .block4_text5 {
+        display: none;
+        padding: 0;
+    }
+
+    .block2_text1 {
+        padding-top: 0;
+    }
+
+    .photo1,
+    .photo2 {
+        margin-bottom: 80px;
+    }
 }

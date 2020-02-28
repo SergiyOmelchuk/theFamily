@@ -18,7 +18,9 @@ function Features({title, block1 }) {
         <div className={s.features}>
             <div className={s.titleSection}>
                 <div className={s.title}>
-                    <Text blockName="featuresTitle" text={title}/>
+                    <Text blockName="featuresTitle"
+                          text={title}
+                          className="title"/>
                 </div>
             </div>
             <FeaturesBlock1 />

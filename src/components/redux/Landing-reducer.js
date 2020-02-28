@@ -1,4 +1,7 @@
 import * as axios from "axios";
+import image1 from "../Designs/img/design1.jpg";
+import image2 from "../Designs/img/design2.jpg";
+import image3 from "../Designs/img/design3.jpg";
 
 let initialState = {
     wow: "Пока ничего",
@@ -488,6 +491,45 @@ let initialState = {
                 uk: "Дайте гостям посилання на сайт і насолоджуйтесь найкращим днем вашого життя! Гірко!"
             },
         }
+    },
+    designs: {
+        title: {
+            en: "Choice of Design",
+            ru: "Выбор дизайна",
+            uk: "Вибір дизайну"
+        },
+        designsArr: [
+            {
+                _id: 0,
+                title: "Love",
+                img: image1,
+                href: "#"
+            },
+            {
+                _id: 1,
+                title: "Romantic",
+                img: image2,
+                href: "#"
+            },
+            {
+                _id: 2,
+                title: "Orange",
+                img: image3,
+                href: "#"
+            },
+            {
+                _id: 3,
+                title: "Green",
+                img: image1,
+                href: "#"
+            },
+            {
+                _id: 4,
+                title: "Black",
+                img: image2,
+                href: "#"
+            }
+        ]
     },
     prices: {
         title: "Prices",

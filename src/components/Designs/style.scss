@@ -1,0 +1,15 @@
+$i: 0;
+@for $i from 0 through 4 {
+  .slick-center #item-#{$i} {
+    opacity: 1;
+    transform: scale(1);
+
+    .details {
+      opacity: 1;
+    }
+  }
+}
+
+.details {
+  opacity: 0;
+}

@@ -34,13 +34,11 @@ function App() {
                 <Route path="/password-reset" render={() => <PasswordReset />}/>
                 <Route exact path="/" render={() =>
                 <div>
-                    {/*<PasswordReset />*/}
-
                     <Main/>
                     <Features />
-                    <HowItWork/>
+                    {/*<HowItWork/>*/}
                     <Designs/>
-                    <Prices/>
+                    {/*<Prices/>*/}
                     {/*<Certificate />*/}
                     {/*<Reviews/>*/}
                     {/*<Faq/>*/}

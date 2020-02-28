@@ -48,27 +48,31 @@ componentDidUpdate(prevProps, prevState, snapshot) {
 
     render() {
         const {editMode, text} = this.state;
-        const { landingEditMode, language} = this.props;
-
+        const { className, color, landingEditMode, language} = this.props;
+        const elemColor = color ? {color: `#${color}`} : null;
+        const classes = classNames(
+            className
+        );
 
         return (
             <div>
                 {!landingEditMode &&
-                <div >
+                <div className={classes} style={elemColor}>
                     {text[language]}
                 </div>
                 }
 
                 {landingEditMode && !editMode &&
-                <div onDoubleClick={this.activateEditMode}>
+                <div className={classes} style={elemColor}onDoubleClick={this.activateEditMode}>
                     {text[language]}
                 </div>
                 }
 
                 {landingEditMode && editMode &&
-                <div>
+                <div className={classes}>
                             <textarea onChange={this.onStatusChange} autoFocus={true}
                                       onBlur={this.deActivateEditMode}
+                                      style={elemColor}
                                       value={text[language]}> </textarea>
                 </div>
                 }

@@ -1,0 +1,19 @@
+.slider {
+  display: none;
+}
+
+@media (max-width: 414px) {
+  .slick-next {
+    right: 40%;
+    top: 120%;
+  }
+  .slick-prev {
+    left: 40%;
+    top: 120%;
+  }
+  .slider {
+    display: block;
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+}

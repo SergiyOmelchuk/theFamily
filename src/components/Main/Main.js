@@ -9,25 +9,12 @@ import {updateText} from "../redux/Landing-reducer";
 function Main({mainTitle, mainMainText, mainText, mainMainButtonText, mainSecondaryButtonText, landingEditMode, language, updateText}) {
     return (
         <div>
-
-            {/*<div id="main" className={s.main}>*/}
-
-            {/*    <div className={s.buttonBlock}>*/}
-            {/*        <button className={`${s.buttonChooseDesign} ${c.buttonCommon} ${c.buttonSecondaryCommon}`}>*/}
-            {/*            {mainMainButtonText}*/}
-            {/*        </button>*/}
-            {/*        <button id="button" className={`${s.buttonCreateSite} ${c.buttonCommon} ${c.buttonMainCommon}`}>*/}
-            {/*            {mainSecondaryButtonText}*/}
-            {/*        </button>*/}
-            {/*        <Button className="mainText" id="mainSecondaryButtonText" text={mainSecondaryButtonText}*/}
-            {/*                updateText={updateText}/>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
             <div id="main" className={s.main}>
                 <div blockName="textBlock" className={s.textBlock}>
                     <div className={s.title}>
                         <Text blockName="mainTitle"
-                              text={mainTitle}/>
+                              text={mainTitle}
+                              className="title"/>
                     </div>
                     <div className={s.mainText}>
                         <Text blockName="mainMainText"
@@ -35,18 +22,17 @@ function Main({mainTitle, mainMainText, mainText, mainMainButtonText, mainSecond
                     </div>
                     <div className={s.text}>
                         <Text blockName="mainText"
-                              text={mainText}/>
+                              text={mainText}
+                              className="text"/>
                     </div>
 
                 </div>
                 <div className={s.buttonBlock}>
                     <Button className="button secondary"
-                            style={{width: "240px", marginRight: "40px"}}
                             onClick={() => alert("Hello world")}
                             blockName="mainSecondaryButtonText"
                             text={mainSecondaryButtonText}/>
                     <Button className="button main"
-                            style={{width: "240px"}}
                             onClick={() => alert("Hello world")}
                             blockName="mainMainButtonText"
                             text={mainMainButtonText}/>

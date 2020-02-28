@@ -65,22 +65,22 @@ class Button extends Component {
         return (
             <div>
                 {!landingEditMode &&
-                <div  className={classes} style={style} onClick={onClick} >
+                <button  className={classes} style={style} onClick={onClick} >
                     {text[language]}
-                </div>
+                </button>
                 }
                 {landingEditMode && !editMode &&
-                <div className={classes} style={style} onDoubleClick={this.activateEditMode}>
+                <button className={classes} style={style} onDoubleClick={this.activateEditMode}>
                     {text[language]}
-                </div>
+                </button>
                 }
 
                 {landingEditMode && editMode &&
-                <div  className={classes} style={style}>
+                <button  className={classes} style={style}>
                             <textarea onChange={this.onStatusChange} autoFocus={true}
                                       onBlur={this.deActivateEditMode}
                                       value={text[language]}> </textarea>
-                </div>
+                </button>
                 }
             </div>
         )
