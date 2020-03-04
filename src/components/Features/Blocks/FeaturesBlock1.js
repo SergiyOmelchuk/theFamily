@@ -6,12 +6,18 @@ import {updateText} from "../../redux/Landing-reducer";
 import Text from "../../../common/components/Text/Text";
 import img1 from ".././img/photo_features_1.jpg";
 import img2 from ".././img/photo_features_2.jpg";
+import slider1 from ".././img/slider1.jpg";
+import slider2 from ".././img/slider2.jpg";
+import slider3 from ".././img/slider3.jpg";
+import slider4 from ".././img/slider4.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../style.scss";
+import Button from "../../../common/components/Button/Button";
 
 
-function FeaturesBlock1({block1}) {
+
+function FeaturesBlock1({block1, mainMainButtonText, mainSecondaryButtonText}) {
 
     const settings = {
         dots: true,
@@ -21,6 +27,7 @@ function FeaturesBlock1({block1}) {
         slidesToShow: 1,
         slidesToScroll: 1,
         fade: true,
+        adaptiveHeight: true
 
     };
     return (
@@ -30,6 +37,7 @@ function FeaturesBlock1({block1}) {
                       text={block1.title}
                       className="title"/>
             </div>
+
             <div className={s.photo1}>
                 <img src={img1} alt=""/>
                 <div className={s.photo_rightShadowElement}></div>
@@ -88,9 +96,13 @@ function FeaturesBlock1({block1}) {
                 </div>
 
             </div>
-            <div className="slider">
+            <div className="sliderFeatures">
                 <Slider {...settings}>
                     <div >
+                        <div className={s.photoSlider}>
+                            <img src={slider1} alt=""/>
+                            <div className={s.photo_rightShadowElement}></div>
+                        </div>
                         <div className={s.titleText}>
                             <Text blockName="featuresBlock1Block1Title"
                                   text={block1.textBlock1.title}
@@ -102,8 +114,18 @@ function FeaturesBlock1({block1}) {
                                   color={"f1e1ca"}
                                   className="text"/>
                         </div>
+                        <div className={s.buttonBlock}>
+                            <Button className="button main"
+                                    onClick={() => alert("Hello world")}
+                                    blockName="mainMainButtonText"
+                                    text={mainMainButtonText}/>
+                        </div>
                     </div>
                     <div >
+                        <div className={s.photoSlider}>
+                            <img src={slider2} alt=""/>
+                            <div className={s.photo_rightShadowElement}></div>
+                        </div>
                         <div className={s.titleText}>
                             <Text blockName="featuresBlock1Block2Title"
                                   text={block1.textBlock2.title}
@@ -115,8 +137,18 @@ function FeaturesBlock1({block1}) {
                                   color={"f1e1ca"}
                                   className="text"/>
                         </div>
+                        <div className={s.buttonBlock}>
+                            <Button className="button main"
+                                    onClick={() => alert("Hello world")}
+                                    blockName="mainMainButtonText"
+                                    text={mainMainButtonText}/>
+                        </div>
                     </div>
                     <div >
+                        <div className={s.photoSlider}>
+                            <img src={slider3} alt=""/>
+                            <div className={s.photo_rightShadowElement}></div>
+                        </div>
                         <div className={s.titleText}>
                             <Text blockName="featuresBlock1Block3Title"
                                   text={block1.textBlock3.title}
@@ -128,8 +160,18 @@ function FeaturesBlock1({block1}) {
                                   color={"f1e1ca"}
                                   className="text"/>
                         </div>
+                        <div className={s.buttonBlock}>
+                            <Button className="button main"
+                                    onClick={() => alert("Hello world")}
+                                    blockName="mainMainButtonText"
+                                    text={mainMainButtonText}/>
+                        </div>
                     </div>
                     <div >
+                        <div className={s.photoSlider}>
+                            <img src={slider4} alt=""/>
+                            <div className={s.photo_rightShadowElement}></div>
+                        </div>
                         <div className={s.titleText}>
                             <Text blockName="featuresBlock1Block4Title"
                                   text={block1.textBlock4.title}
@@ -140,6 +182,12 @@ function FeaturesBlock1({block1}) {
                                   text={block1.textBlock4.text}
                                   color={"f1e1ca"}
                                   className="text"/>
+                        </div>
+                        <div className={s.buttonBlock}>
+                            <Button className="button main"
+                                    onClick={() => alert("Hello world")}
+                                    blockName="mainMainButtonText"
+                                    text={mainMainButtonText}/>
                         </div>
                     </div>
                 </Slider>
@@ -156,6 +204,7 @@ function FeaturesBlock1({block1}) {
 let mapStateToProps = (state) => {
     return {
         block1: state.landingPage.features.block1,
+        mainMainButtonText: state.landingPage.mainBlock.mainMainButtonText
     };
 };
 

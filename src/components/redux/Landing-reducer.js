@@ -2,6 +2,10 @@ import * as axios from "axios";
 import image1 from "../Designs/img/design1.jpg";
 import image2 from "../Designs/img/design2.jpg";
 import image3 from "../Designs/img/design3.jpg";
+import slider1 from "../Features/img/slider1.jpg";
+import slider2 from "../Features/img/slider2.jpg";
+import slider3 from "../Features/img/slider3.jpg";
+import slider4 from "../Features/img/slider4.jpg";
 
 let initialState = {
     wow: "Пока ничего",
@@ -239,54 +243,64 @@ let initialState = {
                 uk: "Онлайн помічник в організації весілля"
             },
 
-            textBlock1: {
-                title: {
-                    en: "ORGANISATIONAL ASPECTS",
-                    ru: "ОРГАНИЗАЦИОННЫЕ МОМЕНТЫ",
-                    uk: "ОРГАНІЗАЦІЙНІ МОМЕНТИ"
+            textBlocks: [
+                {
+                    _id: 1,
+                    photo: slider1,
+                    title: {
+                        en: "ORGANISATIONAL ASPECTS",
+                        ru: "ОРГАНИЗАЦИОННЫЕ МОМЕНТЫ",
+                        uk: "ОРГАНІЗАЦІЙНІ МОМЕНТИ"
+                    },
+                    text: {
+                        en: "Using the site you can provide all necessary organisational aspects for your guests. They won't call you every time they need some information about your wedding, they will have all aggregated in one place online point of access to any necessary information regarding the wedding: wedding schedule, maps, how to get tips, their table on the ceremony, and any useful info you want to share! Any changes - update the information and your guests will see the changes instantly!",
+                        ru: "Напишите на вашем сайте все организационные моменты свадьбы и гости не будут вам звонить каждый раз когда им нужна будет какая-то информация. Они смогут узнать все что им нужно уточнить о свадьбе в едином месте - на вашем сайте: программа свадьбы, карта проезда, список гостей, схема рассадки гостей по столам, список подарков, размещение и многое-многое другое. Вносите изменения на сайте и ваши гости мгновенно увидят все изменения.",
+                        uk: "Напишіть на вашому сайті всі організаційні моменти весілля, і гості не телефонуватимуть вам щоразу, коли їм буде потрібна якась інформація. Усе про подію вони зможуть дізнатися в єдиному місці - на вашому сайті: програма весілля, карта проїзду, список гостей, схема розсадки, список подарунків, розміщення і багато-багато іншого. Вносьте зміни на сайт, і ваші гості миттєво побачать їх на своїх ґаджетах."
+                    },
                 },
-                text: {
-                    en: "Using the site you can provide all necessary organisational aspects for your guests. They won't call you every time they need some information about your wedding, they will have all aggregated in one place online point of access to any necessary information regarding the wedding: wedding schedule, maps, how to get tips, their table on the ceremony, and any useful info you want to share! Any changes - update the information and your guests will see the changes instantly!",
-                    ru: "Напишите на вашем сайте все организационные моменты свадьбы и гости не будут вам звонить каждый раз когда им нужна будет какая-то информация. Они смогут узнать все что им нужно уточнить о свадьбе в едином месте - на вашем сайте: программа свадьбы, карта проезда, список гостей, схема рассадки гостей по столам, список подарков, размещение и многое-многое другое. Вносите изменения на сайте и ваши гости мгновенно увидят все изменения.",
-                    uk: "Напишіть на вашому сайті всі організаційні моменти весілля, і гості не телефонуватимуть вам щоразу, коли їм буде потрібна якась інформація. Усе про подію вони зможуть дізнатися в єдиному місці - на вашому сайті: програма весілля, карта проїзду, список гостей, схема розсадки, список подарунків, розміщення і багато-багато іншого. Вносьте зміни на сайт, і ваші гості миттєво побачать їх на своїх ґаджетах."
+                {
+                    _id: 2,
+                    photo: slider2,
+                    title: {
+                        en: "GUESTS ONLINE FEEDBACKS",
+                        ru: "ОБРАТНАЯ СВЯЗЬ ОТ ГОСТЕЙ",
+                        uk: "ЗВОРОТНІЙ ЗВ'ЯЗОК ВІД ГОСТЕЙ"
+                    },
+                    text: {
+                        en: "Using the site online RSVP form your guests will be able to confirm/reject their presence and answer any questions you want to know (drink/dishes preferences, single/married, etc.)",
+                        ru: "Используя на сайте форму обратной связи, ваши гости смогут подтвердить свое присутствие/отсутствие на свадьбе, а также ответить на вопросы которые вы укажите (предпочтение по напиткам и т.п.)",
+                        uk: "Користуючись на сайті формою зворотнього зв'язку, гості зможуть підтвердити свою присутність на весіллі, а також відповісти на питання, що ви вкажете (що цікавитимуть вас в процесі організації свята) (вподобання по напоям і т.п.)"
+                    },
                 },
-            },
-            textBlock2: {
-                title: {
-                    en: "GUESTS ONLINE FEEDBACKS",
-                    ru: "ОБРАТНАЯ СВЯЗЬ ОТ ГОСТЕЙ",
-                    uk: "ЗВОРОТНІЙ ЗВ'ЯЗОК ВІД ГОСТЕЙ"
+                {
+                    _id: 3,
+                    photo: slider3,
+                    title: {
+                        en: "ONLINE GUEST MANAGEMENT",
+                        ru: "ОНЛАЙН УПРАВЛЕНИЕ СПИСКОМ ГОСТЕЙ",
+                        uk: "ОНЛАЙН КЕРУВАННЯ СПИСКОМ ГОСТЕЙ"
+                    },
+                    text: {
+                        en: "You can manage your guests list using admin panel of the wedding page! You don't need any notes, excel sheets or any other tools. Just use guest management feature of the page: add, remove, filter, create views, add/remove attributes. Do you want to know how many single men will be present on your ceremony? Just create the fields 'sex' and 'marital status', assign the values correspondently, and apply filter! It is really easy and useful.",
+                        ru: "Ведите список гостей онлайн, используя админ панель вашего сайта! Не нужно писать на листочках, вести в екселе или еще где-то… Добавляйте, удаляйте, редактируйте гостей онлайн. Ведите список так как вам удобно. Хотите посчитать сколько не женатых мужчин будет на свадьбе? Создайте поле 'Статус'. Присвойте каждому гостю значение Женат/Холост. Все! Отфильтруйте по значению 'Холост' и получите результат.",
+                        uk: "Ви зможете коригувати список гостей, використовуючи адмін панель вашого сайту! Не потрібно писати на листочках, робити ексель таблиці чи ще щось... Додавайте, видаляйте, редагуйте список онлайн. Робіть його таким, як вам потрібно. Хочете порахувати, скільки неодружених чоловіків буде на весіллі? Додайте поле 'Одружений' з варіантами 'Так/Ні', проставте кожному гостю його статус, відфільтруйте по колонці. Все! Це справді просто"
+                    },
                 },
-                text: {
-                    en: "Using the site online RSVP form your guests will be able to confirm/reject their presence and answer any questions you want to know (drink/dishes preferences, single/married, etc.)",
-                    ru: "Используя на сайте форму обратной связи, ваши гости смогут подтвердить свое присутствие/отсутствие на свадьбе, а также ответить на вопросы которые вы укажите (предпочтение по напиткам и т.п.)",
-                    uk: "Користуючись на сайті формою зворотнього зв'язку, гості зможуть підтвердити свою присутність на весіллі, а також відповісти на питання, що ви вкажете (що цікавитимуть вас в процесі організації свята) (вподобання по напоям і т.п.)"
-                },
-            },
-            textBlock3: {
-                title: {
-                    en: "ONLINE GUEST MANAGEMENT",
-                    ru: "ОНЛАЙН УПРАВЛЕНИЕ СПИСКОМ ГОСТЕЙ",
-                    uk: "ОНЛАЙН КЕРУВАННЯ СПИСКОМ ГОСТЕЙ"
-                },
-                text: {
-                    en: "You can manage your guests list using admin panel of the wedding page! You don't need any notes, excel sheets or any other tools. Just use guest management feature of the page: add, remove, filter, create views, add/remove attributes. Do you want to know how many single men will be present on your ceremony? Just create the fields 'sex' and 'marital status', assign the values correspondently, and apply filter! It is really easy and useful.",
-                    ru: "Ведите список гостей онлайн, используя админ панель вашего сайта! Не нужно писать на листочках, вести в екселе или еще где-то… Добавляйте, удаляйте, редактируйте гостей онлайн. Ведите список так как вам удобно. Хотите посчитать сколько не женатых мужчин будет на свадьбе? Создайте поле 'Статус'. Присвойте каждому гостю значение Женат/Холост. Все! Отфильтруйте по значению 'Холост' и получите результат.",
-                    uk: "Ви зможете коригувати список гостей, використовуючи адмін панель вашого сайту! Не потрібно писати на листочках, робити ексель таблиці чи ще щось... Додавайте, видаляйте, редагуйте список онлайн. Робіть його таким, як вам потрібно. Хочете порахувати, скільки неодружених чоловіків буде на весіллі? Додайте поле 'Одружений' з варіантами 'Так/Ні', проставте кожному гостю його статус, відфільтруйте по колонці. Все! Це справді просто"
-                },
-            },
-            textBlock4: {
-                title: {
-                    en: "GUEST SEEDLING. GET EVERYONE ACQUAINTED",
-                    ru: "РОЗСАДКА ГОСТЕЙ. ПОЗНАКОМЬ ВСЕХ",
-                    uk: "РОЗСАДКА ГОСТЕЙ. ПОЗНАЙОМТЕ УСІХ"
-                },
-                text: {
-                    en: "Inform your guests about their table seat on the ceremony and with whom they will share it. Introduce your guests to each other in advance to make the ceremony more friendly. Who knows, maybe next wedding you visit will be the couple from your ceremony.",
-                    ru: "Информируйте своих гостей о том где и с кем они будут сидеть за столом. Представьте своих гостей друг другу чтобы ваша свадьба прошла в более дружественной обстановке. Кто знает, возможно следующая свадьба которую ты посетишь будет состоять из сегодняшних гостей",
-                    uk: "Інформуйте своїх гостей про те, де і з ким вони сидітимуть за столом. Познайомте запрошених заздалегідь онлайн, щоб весілля відбулося у ще більш дружній атмосфері. Хто знає, можливо, наступне весілля, яке ви відвідаєте, святкуватимуть гості, що познайомилися на вашому святі."
-                },
-            }
+                {
+                    _id: 4,
+                    photo: slider4,
+                    title: {
+                        en: "GUEST SEEDLING. GET EVERYONE ACQUAINTED",
+                        ru: "РОЗСАДКА ГОСТЕЙ. ПОЗНАКОМЬ ВСЕХ",
+                        uk: "РОЗСАДКА ГОСТЕЙ. ПОЗНАЙОМТЕ УСІХ"
+                    },
+                    text: {
+                        en: "Inform your guests about their table seat on the ceremony and with whom they will share it. Introduce your guests to each other in advance to make the ceremony more friendly. Who knows, maybe next wedding you visit will be the couple from your ceremony.",
+                        ru: "Информируйте своих гостей о том где и с кем они будут сидеть за столом. Представьте своих гостей друг другу чтобы ваша свадьба прошла в более дружественной обстановке. Кто знает, возможно следующая свадьба которую ты посетишь будет состоять из сегодняшних гостей",
+                        uk: "Інформуйте своїх гостей про те, де і з ким вони сидітимуть за столом. Познайомте запрошених заздалегідь онлайн, щоб весілля відбулося у ще більш дружній атмосфері. Хто знає, можливо, наступне весілля, яке ви відвідаєте, святкуватимуть гості, що познайомилися на вашому святі."
+                    },
+                }
+            ]
         },
         block3: {
             title: {
@@ -406,91 +420,75 @@ let initialState = {
             ru: "Как это работает?",
             uk: "Як це працює?"
         },
-        block1: {
-            number: {
-                en: "1",
-                ru: "1",
-                uk: "1"
+        items: [
+            {
+                _id: 1,
+                title: {
+                    en: "REGISTRATION",
+                    ru: "Регистрация",
+                    uk: "Реєстрація"
+                },
+                text: {
+                    en: "Register with your e-mail or via your social networks accounts. NOTE: to be able to recieve notifications please fill in your actual e-mail in your profile.",
+                    ru: "Выберите дизайн который подходит вам больше всего. Но не стоит переживать - вы всегда сможете изменить дизайн на любой из доступных вариантов!",
+                    uk: "Ви можете зареєструватися з допомогою емейл або через акаунти соціальних мереж. ВАЖЛИВО: для того щоб від гостей отримувати підтвердження їхньої участі у весіллі, треба ввести свій емейл"
+                },
             },
-            title: {
-                en: "REGISTRATION",
-                ru: "Регистрация",
-                uk: "Реєстрація"
+            {
+                _id: 2,
+                title: {
+                    en: "CHOICE OF DESIGN",
+                    ru: "ВЫБОР ДИЗАЙНА",
+                    uk: "ВИБІР ДИЗАЙНУ"
+                },
+                text: {
+                    en: "Choose the design you like. Don`t worry you can use all possible designs and change it any time.",
+                    ru: "Выберите дизайн который подходит вам больше всего. Но не стоит переживать - вы всегда сможете изменить дизайн на любой из доступных вариантов!",
+                    uk: "Вибирайте дизайн який вам найбільше сподобався, проте не переживайте - ви завжди зможете змінити дизайн вашого сайту"
+                },
             },
-            text: {
-                en: "Register with your e-mail or via your social networks accounts. NOTE: to be able to recieve notifications please fill in your actual e-mail in your profile.",
-                ru: "Выберите дизайн который подходит вам больше всего. Но не стоит переживать - вы всегда сможете изменить дизайн на любой из доступных вариантов!",
-                uk: "Ви можете зареєструватися з допомогою емейл або через акаунти соціальних мереж. ВАЖЛИВО: для того щоб від гостей отримувати підтвердження їхньої участі у весіллі, треба ввести свій емейл"
+            {
+                _id: 3,
+                title: {
+                    en: "CHOISE OF THE TARIF",
+                    ru: "ВЫБОР ТАРИФА",
+                    uk: "ВИБІР ТАРИФУ"
+                },
+                text: {
+                    en: "Choose the tariff plan. There are three possible options now.",
+                    ru: "Выбирайте тарифный план. Сейчас существует три различных тарифы.",
+                    uk: "Обирайте тарифний план. Зараз існує три різних тарифи."
+                },
             },
-        },
-        block2: {
-            number: {
-                en: "2",
-                ru: "2",
-                uk: "2"
+            {
+                _id: 4,
+                title: {
+                    en: "SITE FILLING",
+                    ru: "РЕДАКТИРОВАНИЕ САЙТА",
+                    uk: "НАПОВНЕННЯ САЙТУ"
+                },
+                text: {
+                    en: "Fill the site with all information you want to share: couple information, guests profiles, wedding schedule, etc.",
+                    ru: "Выберите дизайн который подходит вам больше всего. Но не стоит переживать - вы всегда сможете изменить дизайн на любой из доступных вариантов!",
+                    uk: "В деталях напишіть все про ваше весілля. Що, де, коли. Розкажіть усім гостям вашу історію знайомства, покажіть запрошених гостей, складіть список подарунків і т.д."
+                },
             },
-            title: {
-                en: "CHOICE OF DESIGN",
-                ru: "ВЫБОР ДИЗАЙНА",
-                uk: "ВИБІР ДИЗАЙНУ"
-            },
-            text: {
-                en: "Choose the design you like. Don`t worry you can use all possible designs and change it any time.",
-                ru: "Выберите дизайн который подходит вам больше всего. Но не стоит переживать - вы всегда сможете изменить дизайн на любой из доступных вариантов!",
-                uk: "Вибирайте дизайн який вам найбільше сподобався, проте не переживайте - ви завжди зможете змінити дизайн вашого сайту"
-            },
-        },
-        block3: {
-            number: {
-                en: "3",
-                ru: "3",
-                uk: "3"
-            },
-            title: {
-                en: "CHOISE OF THE TARIF",
-                ru: "ВЫБОР ТАРИФА",
-                uk: "ВИБІР ТАРИФУ"
-            },
-            text: {
-                en: "Choose the tariff plan. There are three possible options now.",
-                ru: "Выбирайте тарифный план. Сейчас существует три различных тарифы.",
-                uk: "Обирайте тарифний план. Зараз існує три різних тарифи."
-            },
-        },
-        block4: {
-            number: {
-                en: "4",
-                ru: "4",
-                uk: "4"
-            },
-            title: {
-                en: "SITE FILLING",
-                ru: "РЕДАКТИРОВАНИЕ САЙТА",
-                uk: "НАПОВНЕННЯ САЙТУ"
-            },
-            text: {
-                en: "Fill the site with all information you want to share: couple information, guests profiles, wedding schedule, etc.",
-                ru: "Выберите дизайн который подходит вам больше всего. Но не стоит переживать - вы всегда сможете изменить дизайн на любой из доступных вариантов!",
-                uk: "В деталях напишіть все про ваше весілля. Що, де, коли. Розкажіть усім гостям вашу історію знайомства, покажіть запрошених гостей, складіть список подарунків і т.д."
-            },
-        },
-        block5: {
-            number: {
-                en: "5",
-                ru: "5",
-                uk: "5"
-            },
-            title: {
-                en: "CELEBRATE!",
-                ru: "ГОТОВО",
-                uk: "ГІРКО!"
-            },
-            text: {
-                en: "Share the link for your site with your guests and start celebration! Congrats!",
-                ru: "Дайте гостям ссылку на сайт и наслаждайтесь лучшим днем вашей жизни. Горько!",
-                uk: "Дайте гостям посилання на сайт і насолоджуйтесь найкращим днем вашого життя! Гірко!"
-            },
-        }
+            {
+                _id: 5,
+                title: {
+                    en: "CELEBRATE!",
+                    ru: "ГОТОВО",
+                    uk: "ГІРКО!"
+                },
+                text: {
+                    en: "Share the link for your site with your guests and start celebration! Congrats!",
+                    ru: "Дайте гостям ссылку на сайт и наслаждайтесь лучшим днем вашей жизни. Горько!",
+                    uk: "Дайте гостям посилання на сайт і насолоджуйтесь найкращим днем вашого життя! Гірко!"
+                },
+            }
+        ]
+
+
     },
     designs: {
         title: {
@@ -498,6 +496,17 @@ let initialState = {
             ru: "Выбор дизайна",
             uk: "Вибір дизайну"
         },
+        buyButtonText: {
+            en: "CREATE SITE",
+            ru: "Создать сайт",
+            uk: "Створити сайт"
+        },
+        demoButtonText: {
+            en: "Demo",
+            ru: "Демо",
+            uk: "Демо"
+        },
+
         designsArr: [
             {
                 _id: 0,
@@ -535,6 +544,7 @@ let initialState = {
         title: "Prices",
         rates: [
             {
+                _id: 1,
                 name: "rate1",
                 title: "Gold",
                 price: "69",
@@ -558,6 +568,7 @@ let initialState = {
                 ]
             },
             {
+                _id: 2,
                 name: "rate2",
                 title: "Diamond",
                 price: "150",
@@ -581,10 +592,9 @@ let initialState = {
                         "Photos and videos synchronization from mobile app"
 
                     ]
-            }
-            ,
-
+            },
             {
+                _id: 3,
                 name: "rate3",
                 title: "Free",
                 price: "0",

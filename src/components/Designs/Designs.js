@@ -14,7 +14,9 @@ import Text from "../../common/components/Text/Text";
 class Designs extends React.Component {
     state = {
         designs: this.props.designs,
-        activeDesign: this.props.designs[0]
+        activeDesign: this.props.designs[0],
+        buyButtonText: this.props.buyButtonText,
+        demoButtonText: this.props.demoButtonText,
     }
 
     nextProperty = () => {
@@ -31,8 +33,8 @@ class Designs extends React.Component {
         })
     }
 
-    render () {
-        const {designs, activeDesign} = this.state;
+    render() {
+        const {designs, buyButtonText, demoButtonText} = this.state;
 
         const settings = {
             dots: true,
@@ -48,27 +50,22 @@ class Designs extends React.Component {
                     breakpoint: 1024,
                     settings: {
                         slidesToShow: 3,
-                        slidesToScroll: 3,
+                        slidesToScroll: 1,
                         infinite: true,
                         dots: true
                     }
                 },
                 {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        initialSlide: 2
-                    }
-                },
-                {
-                    breakpoint: 480,
+                    breakpoint: 768,
                     settings: {
                         slidesToShow: 1,
-                        slidesToScroll: 1
+                        slidesToScroll: 1,
+                        dots: true,
+                        arrows: false,
                     }
                 }
             ]
+
         };
 
         return (
@@ -78,10 +75,13 @@ class Designs extends React.Component {
                           text={this.props.title}
                           className="title"/>
                 </div>
-                <div>
+                <div className="sliderDesigns">
                     <Slider {...settings}>
                         {
-                            designs.map(item => <CardOfDesigns key={item._id} designs={item}/>)
+                            designs.map(item => <CardOfDesigns key={item._id}
+                                                               designs={item}
+                                                               demoButtonText={demoButtonText}
+                                                               buyButtonText={buyButtonText}/>)
                         }
                     </Slider>
                 </div>
@@ -94,6 +94,8 @@ class Designs extends React.Component {
 let mapStateToProps = (state) => {
     return {
         designs: state.landingPage.designs.designsArr,
+        demoButtonText: state.landingPage.designs.demoButtonText,
+        buyButtonText: state.landingPage.designs.buyButtonText,
         title: state.landingPage.designs.title,
 
     };

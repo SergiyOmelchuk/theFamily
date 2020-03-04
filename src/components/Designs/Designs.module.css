@@ -1,5 +1,4 @@
 .designs {
-    padding: 0 70px;
     margin-bottom: 135px;
     height: 700px;
 }
@@ -41,8 +40,8 @@
 .item_imgBlock {
     padding: 10px;
     border: 4px solid #8f704c;
-    height: 360px;
-    width: 490px;
+    /*height: 360px;*/
+    /*width: 490px;*/
     cursor: pointer;
 }
 
@@ -63,18 +62,22 @@
     text-transform: uppercase;
     padding: 20px 0 30px;
 }
-
-.buyButton,
-.demoButton {
-    width: 150px;
-    font-size: 13px;
+.item_buttonBlock {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.buyButton {
-    margin-right: 20px;
+.item_buttonBlock button {
+
+    width: 200px;
+    margin: 10px;
 }
 
-.slick-center {
-    opacity: 1;
-    transform: scale(1);
+@media (max-width: 414px) {
+    .designs {
+        margin-bottom: 150px;
+        height: auto;
+    }
+
 }

@@ -14,60 +14,26 @@ function HowItWork({howItWorks, language}) {
                       className="title"/>
             </div>
             <div className={s.itemsBlock}>
-                    <div className={s.item}>
-                        <div className={s.itemNumber}>
-                            <div>{howItWorks.block1.number[language]}</div>
-
-                        </div>
-                        <div className={s.itemHoverText}>
-                            <div className={s.itemTitle}>
-                                {howItWorks.block1.title[language]}
+                {
+                    howItWorks.items.map( item => {
+                       return ( <div className={s.item}>
+                            <div className={s.itemNumber}>
+                                <div>{item._id}</div>
                             </div>
-                            <div className={s.itemText}>
-                                {howItWorks.block1.text[language]}
-                            </div>
-                        </div>
-                    </div>
-                    <div className={s.item}>
-                        <div className={s.itemNumber}>
-                            {howItWorks.block2.number[language]}
-                        </div>
-                        <div className={s.itemHoverText}>
-                            <div className={s.itemTitle}>
-                                {howItWorks.block2.title[language]}
-                            </div>
-                            <div className={s.itemText}>
-                                {howItWorks.block2.text[language]}
+                            <div className={s.itemHoverText}>
+                                <div className={s.itemTitle}>
+                                    {item.title[language]}
+                                </div>
+                                <div className={s.itemText}>
+                                    <Text blockName={`howItWorksBlock${item._id}Text`}
+                                          text={item.text}
+                                          className="text"/>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className={s.item}>
-                        <div className={s.itemNumber}>{howItWorks.block3.number[language]}</div>
-                        <div className={s.itemHoverText}>
-                            <div className={s.itemTitle}>{howItWorks.block3.title[language]}</div>
-                            <div className={s.itemText}>
-                                {howItWorks.block3.text[language]}
-                            </div>
-                        </div>
-                    </div>
-                    <div className={s.item}>
-                        <div className={s.itemNumber}>{howItWorks.block4.number[language]}</div>
-                        <div className={s.itemHoverText}>
-                            <div className={s.itemTitle}>{howItWorks.block4.title[language]}</div>
-                            <div className={s.itemText}>
-                                {howItWorks.block4.text[language]}
-                            </div>
-                        </div>
-                    </div>
-                    <div className={s.item}>
-                        <div className={s.itemNumber}>{howItWorks.block5.number[language]}</div>
-                        <div className={s.itemHoverText}>
-                            <div className={s.itemTitle}>{howItWorks.block5.title[language]}</div>
-                            <div className={s.itemText}>
-                                {howItWorks.block5.text[language]}
-                            </div>
-                        </div>
-                    </div>
+                       )
+                    })
+                }
 
             </div>
         </div>

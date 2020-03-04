@@ -36,7 +36,7 @@ function App() {
                 <div>
                     <Main/>
                     <Features />
-                    {/*<HowItWork/>*/}
+                    <HowItWork/>
                     <Designs/>
                     {/*<Prices/>*/}
                     {/*<Certificate />*/}

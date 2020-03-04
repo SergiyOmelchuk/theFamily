@@ -15,11 +15,12 @@ function FeaturesBlock3({block3}) {
     const settings = {
         dots: true,
         infinite: true,
-        arrows: true,
+        arrows: false,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
         fade: true,
+        adaptiveHeight: true
 
     };
 
@@ -69,7 +70,7 @@ function FeaturesBlock3({block3}) {
                           className="text"/>
                 </div>
             </div>
-            <div className="slider">
+            <div className="sliderFeatures">
                 <Slider  {...settings} >
                     <div className={s.block3_text1}>
                         <div className={s.titleText}>

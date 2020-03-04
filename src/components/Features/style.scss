@@ -1,19 +1,47 @@
-.slider {
+.sliderFeatures {
   display: none;
+  .slick-list {
+    margin-bottom: 80px;
+  }
+  .slick-prev, .slick-next{
+    z-index: 10;
+  }
+
+  .slick-prev:before, .slick-next:before {
+    color: rgb(241, 225, 202);
+  }
+
+  .slick-dots {
+    bottom: 0;
+    top: 94vw;
+    height: 20px;
+  }
+
+  .slick-dots li button:before {
+    color: rgb(241, 225, 202);
+  }
+
+  .slick-dots li.slick-active button:before {
+    color: #e3c597;
+  }
+}
+.react-player__shadow {
+  background: grey;
 }
 
+
 @media (max-width: 414px) {
-  .slick-next {
-    right: 40%;
-    top: 120%;
-  }
-  .slick-prev {
-    left: 40%;
-    top: 120%;
-  }
-  .slider {
+
+  .sliderFeatures {
     display: block;
-    margin-bottom: 50px;
     margin-top: 20px;
+    .slick-next {
+      right: 20%;
+      top: 99vw;
+    }
+    .slick-prev {
+      left: 20%;
+      top: 99vw;
+    }
   }
 }

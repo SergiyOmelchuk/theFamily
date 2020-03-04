@@ -4,6 +4,8 @@ import Button from "../../common/components/Button/Button";
 import Text from "../../common/components/Text/Text";
 import {connect} from "react-redux";
 import {updateText} from "../redux/Landing-reducer";
+import slider1 from "../Features/img/slider.jpg";
+import ReactPlayer from "react-player";
 
 
 function Main({mainTitle, mainMainText, mainText, mainMainButtonText, mainSecondaryButtonText, landingEditMode, language, updateText}) {
@@ -37,6 +39,8 @@ function Main({mainTitle, mainMainText, mainText, mainMainButtonText, mainSecond
                             blockName="mainMainButtonText"
                             text={mainMainButtonText}/>
                 </div>
+
+
             </div>
         </div>
     )

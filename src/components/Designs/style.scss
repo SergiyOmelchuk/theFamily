@@ -1,6 +1,37 @@
+.sliderDesigns {
+  .details {
+    opacity: 0;
+  }
+  .slick-prev:before, .slick-next:before {
+    color: rgb(241, 225, 202);
+  }
+  .slick-next {
+    right: 30%;
+    top: 80%;
+  }
+  .slick-prev {
+    left: 30%;
+    top: 80%;
+  }
+  .slick-dots {
+    bottom: 0;
+    top: 110%;
+
+  }
+
+  .slick-dots li button:before {
+    color: rgb(241, 225, 202);
+  }
+
+  .slick-dots li.slick-active button:before {
+    color: #e3c597;
+  }
+}
+
+
 $i: 0;
 @for $i from 0 through 4 {
-  .slick-center #item-#{$i} {
+  .sliderDesigns .slick-center #item-#{$i} {
     opacity: 1;
     transform: scale(1);
 
@@ -10,6 +41,3 @@ $i: 0;
   }
 }
 
-.details {
-  opacity: 0;
-}

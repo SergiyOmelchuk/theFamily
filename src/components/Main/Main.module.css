@@ -86,6 +86,14 @@
     .text {
         display: none;
     }
+    /*.buttonBlock {*/
+    /*    flex-direction: row;*/
+    /*    justify-content: space-around;*/
+    /*    align-self: flex-start;*/
+    /*}*/
+    /*.buttonBlock button {*/
+    /*    width: 150px;*/
+    /*}*/
 
 }
 

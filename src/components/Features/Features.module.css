@@ -34,7 +34,8 @@
 }
 
 .photo1,
-.photo2 {
+.photo2,
+.photoSlider {
     width: 245px;
     height: 245px;
     box-shadow: 0 0 0 6px #9f7b51, 0 0 0 14px #000;
@@ -44,7 +45,8 @@
 }
 
 .photo1 img,
-.photo2 img {
+.photo2 img,
+.photoSlider img {
     width: 100%;
 }
 
@@ -112,14 +114,15 @@ div.text {
 .block2_text2,
 .block2_text3 {
     padding-right: 37px;
-    max-height: 160px;
-    overflow: auto;
+    /*max-height: 160px;*/
+    /*overflow: auto;*/
 }
 
 .block2_text1 {
     grid-area: block2text1;
     padding-top: 30px;
-    overflow: visible;
+    max-height: 100% !important;
+    /*overflow: visible !important;*/
 }
 
 .block2_text2 {
@@ -129,6 +132,7 @@ div.text {
 
 .block2_text3 {
     grid-area: block2text3;
+    overflow: visible !important;
 }
 
 .block2_text4 {
@@ -262,6 +266,20 @@ div.text {
     display: none;
 }
 
+
+.player {
+    width: 81vh;
+    height: 45vh;
+    margin: 0 auto 100px auto;
+}
+
+.react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
 @media (max-width: 1360px) {
 
     .titleText {
@@ -323,6 +341,7 @@ div.text {
 
 @media (max-width: 414px) {
 
+
     .block1, .block2, .block3, .block4 {
         display: flex;
         flex-direction: column;
@@ -337,14 +356,74 @@ div.text {
     .block4_text1, .block4_text2, .block4_text3, .block4_text4, .block4_text5 {
         display: none;
         padding: 0;
+        margin: 0;
+    }
+    .desktop {
+        display: none;
     }
 
     .block2_text1 {
         padding-top: 0;
     }
 
+    .titleText {
+        padding-bottom: 10px;
+    }
+
     .photo1,
     .photo2 {
-        margin-bottom: 80px;
+        width: 250px;
+        height: 250px;
+        margin: 40px auto 80px auto;
+    }
+
+    .photoSlider {
+        width: 80vw;
+        height: 80vw;
+        margin: 10px auto 90px auto;
+        outline-offset: 0;
+    }
+
+    .photo_rightShadowElement {
+        outline: 7px solid #645038;
+        position: absolute;
+        top: 27px;
+        left: 22px;
+        z-index: -10;
+    }
+
+    .photo1,
+    .photo2 {
+        display: none;
+    }
+
+    .titleBlock,
+    .titleText {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .titleBlock, .block2_title, .block3_title, .block4_title {
+        margin: 0 0 30px 0;
+    }
+
+    .buttonBlock {
+        display: flex;
+        justify-content: center;
+        z-index: 5;
+        margin-top: 30px;
+    }
+
+    .buttonBlock button {
+        width: 240px;
+    }
+
+}
+
+@media (orientation: portrait) {
+    .player {
+        width: 85vw;
+        height: 48vw;
+        margin-bottom: 120px;
     }
 }

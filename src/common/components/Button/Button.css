@@ -35,3 +35,15 @@ textarea {
     background-color: transparent;
     color: white;
 }
+
+
+@media (max-width: 414px) {
+
+    /*.button {*/
+    /*    font-size: 11px;*/
+    /*    letter-spacing: 1px;*/
+    /*    padding: 15px 0;*/
+    /*    border: 1px solid #9f7b51;*/
+    /*}*/
+
+}
